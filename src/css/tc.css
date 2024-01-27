@@ -1,0 +1,67 @@
+body {
+    margin: 0;
+    padding: 0;
+    overflow: scroll;
+ }
+
+ .ar {
+    font-family: Poppins;
+    font-size: 1.4vh;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    transition: all 0.5s ease-in-out;
+    margin-left: 13.1vw;
+    margin-top: 2.1vh;
+    margin-bottom: 0.5vh;
+
+ }
+
+ .hm {
+
+   color: #000;
+   text-decoration: none;
+
+ }
+
+ .lg {
+
+   color: #000;
+   text-decoration: none;
+   
+}
+
+.stc {
+
+   color: #000; 
+   font-family: Poppins; 
+   font-size: 1.8vw; 
+   font-style: normal; 
+   font-weight: 600; 
+   line-height: normal; 
+   margin-bottom: 1.2vh;
+}
+
+.gtc {
+
+   color: #000; 
+   font-family: Poppins; 
+   font-size: 1.2vw; 
+   font-style: normal; 
+   font-weight: 600; 
+   line-height: normal; 
+   margin-left: 13.1vw;
+   margin-top: 2.4vh;
+
+}
+
+.rules-card {
+
+   font-family: Poppins;
+   font-size: 0.9vw;
+   font-style: normal;
+   font-weight: 300;
+   line-height: 2.4vh; /* 162.5% */
+   margin-left: 13.1vw;
+   width: 100.9vh;
+}
