@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../css/login.css">
+    <link rel="stylesheet" href="../css/admin_login.css">
     <script src="https://kit.fontawesome.com/6e301e326d.js" crossorigin="anonymous"></script>
     <link rel="icon" type="images/x-icon" href="../../images/favicon.ico" />
     <title>Hardware Den</title>

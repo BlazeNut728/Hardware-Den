@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="../css/tc.css">
-    <link rel="icon" type="images/x-icon" href="../images/favicon.ico" />
+    <link rel="stylesheet" type="text/css" href="../css/tc_au.css">
+    <link rel="icon" type="images/x-icon" href="../../images/favicon.ico" />
     <script src="https://kit.fontawesome.com/6e301e326d.js" crossorigin="anonymous"></script>
     <title>Hardware Den</title>
 </head>
@@ -31,7 +31,7 @@
 
     <script>
         function displayRules() {
-            fetch('./rules.json')
+            fetch('../json/rules.json')
                 .then(response => response.json())
                 .then(data => {
                     for (const rule in data) {

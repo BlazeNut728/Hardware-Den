@@ -54,7 +54,7 @@
             <div class = "bf">
                 Be the first to hear about the latest offers.
             </div>
-            <form form action="footer.php" method="POST">
+            <form form action="footer.php" id = "nls" method="POST">
                 <div class = Rectangle1>
             
                     <input type="email" name="email" id="email" placeholder = "Your Email" autocomplete = "off" style = "width: 30.0vh;">
@@ -73,9 +73,9 @@
         </div>
             <div class="grid-container">
                 <div class="grid-item">
-                    <a class="hd3" href = "">Privacy Policy
+                    <a class="hd3" href = "about_us.php">About Us
                     <a class="hd3" href = "">Search</a>
-                    <a class="hd3" href = "">Terms</a>
+                    <a class="hd3" href = "term_conditions.php">Terms</a>
                     <a class="hd3" href = "">Contact Us</a>
                     <a class="hd3" href = "">Orders and Returns</a>
                     <a class="hd3" href = "">Newsletter Subscription</a>
@@ -127,6 +127,23 @@
             <img class = "i2" src = "https://media.discordapp.net/attachments/1196163965110202440/1199068431216033852/image.png?ex=65c1327f&is=65aebd7f&hm=2a798b8ba5a427687534964b77823da1c4b335a10a712c7e9f8f127042e78ce8&=&format=webp&quality=lossless&width=61&height=39">
             <a class="hd5" >Created with ❤️ by BlazeNut</a>
         </div>
+
+        <script>
+            <?php 
+                include('data_conn.php');
+
+                $email = $_POST['email'];
+                $sql = "INSERT INTO newsletter (nw_id, email, Status) VALUES ('', '$email', '1')";
+                if ($conn->query($sql) === TRUE) {
+                    echo "New record created successfully";
+                  } else {
+                    echo "Error: " . $sql . "<br>" . $conn->error;
+                  }
+                  
+                  $conn->close();
+            ?>
+
+        </script>
     
   </body>
 </html>
