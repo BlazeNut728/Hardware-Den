@@ -17,7 +17,7 @@
     <div class = form>
         <img src="https://media.discordapp.net/attachments/1196163965110202440/1196183586852851722/Group-removebg-preview.png?ex=65b6b3c7&is=65a43ec7&hm=69cfd79540890af9e307513f8659311b314667fce7e2d55a647a8a2fe3bd164a&=&format=webp&quality=lossless&width=446&height=367" class="basket" alt="Basket">
         
-        <form form action="login.php" method="POST">
+        <form form action="admin_login.php" method="POST">
             <div class = Rectangle1>
             
                 <i class="fa-solid fa-user" style="font-size:2.8vh; padding: 1vh; margin-left: 5px; color: white; "></i>

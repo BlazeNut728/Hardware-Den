@@ -57,7 +57,7 @@
             <form form action="footer.php" id = "nls" method="POST">
                 <div class = Rectangle1>
             
-                    <input type="email" name="email" id="email" placeholder = "Your Email" autocomplete = "off" style = "width: 30.0vh;">
+                    <input type="email" name="email" class = "f-email" id="email" placeholder = "Your Email" autocomplete = "off" style = "width: 30.0vh;">
                     <button type="submit" class="btn2" name ="btn" >Subscribe</button>
 
                 </div>
