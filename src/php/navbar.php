@@ -9,7 +9,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/6e301e326d.js" crossorigin="anonymous"></script>
     <link rel="icon" type="images/x-icon" href="../../images/favicon.ico" />
-
     <title>Hardware Den</title>
   </head>
   <body>
@@ -19,11 +18,9 @@
     <a class = "tbt"> Call Us: (00) 1234 5678 </a>
     <a href="#PRF"><i class="fa-brands fa-square-facebook" style="font-size:1.9vh; margin-left: 1.0vh; padding: 1vh; color: white;"></i></a>
     <a href="#PRF"><i class="fa-brands fa-instagram" style="font-size:1.9vh; padding: 1vh; color: white;"></i></a>
-
     </div>
       <div class="topnav">
         <img src="https://media.discordapp.net/attachments/1196163965110202440/1196761972146966578/HDO.png?ex=65b8ce70&is=65a65970&hm=4eb0287e5a682a30c2ef586498ff210fd3edfeb48ef27257fe1ae7133516b28c&=&format=webp&quality=lossless&width=660&height=700" class = "logo" alt="Logo">
-
         <a class="df" href="#LPT">Laptops</a>
         <a class="df" href="#DPC">Desktop PC's</a>
         <a class="df" href="#ND">Networking Devices</a>
@@ -31,50 +28,14 @@
         <a class="df" href="#PCP">PC Parts</a>
         <a class="df" href="#AOP">All Other Products</a>
         <a class="df" href="#RP">Repairs</a>
-
         <a class="od" href="#OD">Our Deals</a>
-
         <div class="search-container">
           <form action="/search" method="post">
             <input class="search expandright" id="searchright" type="search" name="q" placeholder="Search">
             <label class="button searchbutton" for="searchright"><span class="mglass">&#9906;</span></label>
           </form>
         </div>
-
         <a class="of" href="#CRT"><i class="fa badge fa-lg" value=8 style="font-size:1.9vh; padding: 1vh; margin-left: 2.25vh; margin-top: 3.3vh; color: black;">&#xf07a;</i></a>
         <a class="of" href="#PRF"><i class="fa-solid fa-user" value=8 style="font-size:1.9vh; padding: 1vh; margin-left: 2.25vh; margin-top: 2.4vh; color: black;"></i></a>      
-
       </div>
-
-      <div class = "sep">
-
-      </div>
-
-
-    <script>
-      <?php
-        include('data_conn.php');
-
-        $search = $_POST['search'];
-        $sql = "Select * from students where name like '%$search%'";
-        $result = $conn->query($sql);
-
-        if ($result->num_rows > 0)
-        {
-          while($row = $result->fetch_assoc() )
-          {
-	          echo $row["name"]."  ".$row["age"]."  ".$row["gender"]."<br>";
-          }
-        } 
-        else 
-        {
-	        echo "0 records";
-        }
-
-        $conn->close();
-
-      ?>
-    </script>
-    
-  </body>
-</html>
+      <div class = "sep"></div>

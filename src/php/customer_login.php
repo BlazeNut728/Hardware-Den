@@ -9,10 +9,7 @@
     <title>Hardware Den</title>
 </head>
 <body>
-    <header>
         <?php include('navbar.php');?>
-    </header>
-
     <div class= "ar">
         <a class ="hm" href="#home">Home</a> <a style = "color:#ff8400;"> > </a> <a class ="lg" href="customer_login.php">Login</a>
     </div>
@@ -29,14 +26,14 @@
         
             <a class = "iyhac"> If you have an account, sign in with your email address. </a>
 
-            <form action="customer_login.php">
+            <form action="customer_login.php"  method="POST">
                 <label for="email" class = "cl-text1" >Email:</label>
-                <input type="email" id="cl-email" name="cl-email" class = "cl-email" placeholder="Your Email">
+                <input type="email" id="cl-email" name="cl-email" class = "cl-email" placeholder="Your Email" autocomplete = "off" required>
                 
-                <label for="pass" class = "cl-text2" >Last name:</label>
-                <input type="password" id="cl-pass" name="cl-pass" class = "cl-pass" placeholder="Your Password">
+                <label for="pass" class = "cl-text2" >Password:</label>
+                <input type="password" id="cl-pass" name="cl-pass" class = "cl-pass" placeholder="Your Password" autocomplete = "off" required>
 
-                <input type="submit" value="Submit" class="cl-submit">
+                <input type="submit" value="submit" class="cl-submit">
             </form>
 
         </div>
@@ -57,8 +54,33 @@
         </div>
 
     </div>
-
-
+    <?php      
+            include('data_conn.php');
+            if (isset($_POST['cl-email'])) {
+            $email = $_POST["cl-email"];  
+            $password = $_POST["cl-pass"];  
+            
+                //to prevent from mysqli injection  
+                $username = stripcslashes($email);  
+                $password = stripcslashes($password);  
+                $username = mysqli_real_escape_string($conn, $email);  
+                $password = mysqli_real_escape_string($conn, $password);  
+            
+                $sql = "SELECT * FROM `login_credential` where email = '$email' and pass = '$password'";  
+                $result = mysqli_query($conn, $sql);  
+                $row = mysqli_fetch_array($result, MYSQLI_ASSOC);  
+                $count = mysqli_num_rows($result);  
+                
+                if($count == 1){  
+                    echo "<h1><center> Login successful </center></h1>"; 
+                    header("location: term_conditions.php");
+                }  
+                else{  
+                    echo "<h1> Login failed. Invalid username or password.</h1>";  
+                    header("location: customer_login.php");
+                }
+            }     
+        ?>
     <footer>
         <br><br>
         <?php include('footer.php');?>

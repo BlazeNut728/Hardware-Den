@@ -45,14 +45,6 @@ body {
    margin-bottom: 1.2vh;
 }
 
-.cl-container {
-
-    width: auto;
-    height: auto;
-    background-color: antiquewhite;
-    flex-direction: row;
-}
-
 .login-container {
 
     display: flex;
@@ -69,6 +61,8 @@ body {
 }
 
 .rc {
+
+    display: flex;
 
     margin-left: 5.7vh;
     margin-top: 3.7vh;
@@ -127,7 +121,7 @@ body {
 
     display: flex;
     margin-left: 5.7vh;
-    font-size: 1.8vh;
+    font-size: 1.4vh;
     font-weight: 600;
     
 }
@@ -162,10 +156,13 @@ body {
 
 .register-container {
 
-    display: flex;
+    position: absolute;
+    left: 65.2vh;
+    top: 28.0vh;
+
     width: 56.0vh;
     height: 41.5vh;
-    background-color: grey;
+    background-color: antiquewhite;
 
     margin-left: 37.0vh;
 

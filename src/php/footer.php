@@ -127,7 +127,6 @@
             <img class = "i2" src = "https://media.discordapp.net/attachments/1196163965110202440/1199068431216033852/image.png?ex=65c1327f&is=65aebd7f&hm=2a798b8ba5a427687534964b77823da1c4b335a10a712c7e9f8f127042e78ce8&=&format=webp&quality=lossless&width=61&height=39">
             <a class="hd5" >Created with ❤️ by BlazeNut</a>
         </div>
-
         <script>
             <?php 
                 include('data_conn.php');
@@ -143,7 +142,6 @@
                   $conn->close();
             ?>
 
-        </script>
-    
+        </script>    
   </body>
 </html>

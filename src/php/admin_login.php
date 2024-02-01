@@ -33,7 +33,7 @@
 
             <button type="submit" class="button" name ="btn" >LOGIN</button>
 
-            <span class="rgr"><a href="http://localhost:3000/src/php/register.php">Register</a></span>
+            <span class="rgr"><a href="register.php">Register</a></span>
             <span class="psw"><a href="#">Forgot Password?</a></span>
 
         </form>
@@ -60,11 +60,11 @@
           
         if($count == 1){  
             echo "<h1><center> Login successful </center></h1>";  
-            header("location: ../dashboard.php");
+            header("location: term_conditions.php");
         }  
         else{  
             echo "<h1> Login failed. Invalid username or password.</h1>";  
-            header("location: login.php");
+            header("location: admin_login.php");
         }
     }     
 ?>
