@@ -11,7 +11,7 @@
     <link rel="icon" type="images/x-icon" href="../../images/favicon.ico" />
     <title>Hardware Den</title>
   </head>
-  <body>
+  
     <div class = top-bar> 
     <a class = "tbt"> Mon-Thu:  9:00 AM - 5:30 PM </a>
     <a class = "tbh">Visit our showroom in 1234 Street Adress City Address, 1234  <u>Contact Us</u></a>
