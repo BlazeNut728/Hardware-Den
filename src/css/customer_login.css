@@ -151,6 +151,7 @@ body {
     border-radius: 5vh;
     border: 0.4vh solid var(--Color---3, #ff8400);
     -webkit-text-fill-color: #ff8400;
+    background-color: white;
     text-decoration: none;
 
     margin-top: 3.0vh;

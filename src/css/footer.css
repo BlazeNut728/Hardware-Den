@@ -110,6 +110,11 @@ body {
     line-height: 132.5%; /* 50.35px */
  }
 
+ .su:hover {
+   color: #ff8400;
+   transition: all 0.5s ease-in-out;
+}
+
  .bf {
 
     display: flex;
@@ -144,6 +149,11 @@ body {
     border-radius: 0.4vh;
     border: 0.2vh solid white;
  }
+
+ .f-email:hover {
+   color: #ff8400;
+   transition: all 0.5s ease-in-out;
+}
 
  .btn2 {
 

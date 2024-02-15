@@ -20,17 +20,33 @@ body {
 
  .hm {
 
-   color: #000;
-   text-decoration: none;
-
+    color: #000;
+    text-decoration: none;
+ 
+  }
+ 
+  .hm:hover {
+ 
+    color: #ff8400;
+    text-decoration: none;
+    transition: all 0.2s ease-in-out;
+ 
+  }
+ 
+  .lg {
+ 
+    color: #000;
+    text-decoration: none;
+    
  }
-
- .lg {
-
-   color: #000;
-   text-decoration: none;
-   
-}
+ 
+ .lg:hover {
+ 
+    color: #ff8400;
+    text-decoration: none;
+    transition: all 0.2s ease-in-out;
+ 
+  }
 
 .stc {
 

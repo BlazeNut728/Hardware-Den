@@ -8,27 +8,6 @@
     <script src="https://kit.fontawesome.com/6e301e326d.js" crossorigin="anonymous"></script>
     <title>Hardware Den</title>
 </head>
-    <?php      
-        include('data_conn.php');
-        if (isset($_POST['cl-email'] , $_POST['cl-ta'])) {
-        $name = $_POST["cl-name"];
-        $email = $_POST["cl-email"];
-        $phone_number = $_POST["cl-number"];  
-        $ta = $_POST["cl-ta"];
-
-        $ta = mysqli_real_escape_string($conn, $ta); 
-        
-            $sql = "INSERT INTO `contact_us` (`id`, `name`, `email`, `phone_number`, `wyom`) VALUES (NULL, $name, $email, $phone_number, $ta)";  
-            
-            if($conn->query($sql) === TRUE){  
-                echo "<h1><center> Registration Successful </center></h1>";  
-                header("location: contact_us.php");
-            }  
-            else{  
-                echo "Error: " . $sql . "<br>" . $conn->error;
-            }
-        }     
-    ?>
 <body>
         <?php include('navbar.php');?>
     <div class= "ar">
@@ -52,25 +31,24 @@
 
                 <div class="cu-wrapper">
                     <div>
-                        <label for="name" class = "cl-text1" >Name</label>
+                        <label class = "cl-text1" >Name</label>
                         <input type="text" id="cl-name" name="cl-name" class = "cl-email" placeholder="Your Name" autocomplete = "off" required>
                     </div>
                     <div>
-                        <label for="email" class = "cl-text2" >Email</label>
+                        <label class = "cl-text2" >Email</label>
                         <input type="email" id="cl-email" name="cl-email" class = "cl-email" placeholder="Your Email" autocomplete = "off" required>
                     </div>
                     <div>
-                        <label for="number" class = "cl-text1" >Phone Number</label>
+                        <label class = "cl-text1" >Phone Number</label>
                         <input type="number" id="cl-number" name="cl-number" class = "cl-email" placeholder="Your Number" autocomplete = "off" required>
                     </div>
                 </div>
 
                 <br>
-                <label for="ta" class = "cl-text1" >What's on your mind ?</label>
+                <label class = "cl-text1" >What's on your mind ?</label>
+                <textarea id="cl-ta" name="cl-ta" class = "cl-ta" rows="20" cols="115">Jot us a note and we'll quickly get back to you as soon as possible</textarea>
 
-                <textarea id="cl-ta" name="cl-ta" class = "cl-ta" form="form-cu">Jot us a note and we'll quickly get back to you as soon as possible</textarea>
-
-                <input type="submit" value="Submit" class="cl-submit">
+                <button type="submit" class="cl-submit" name ="cl-submit" >Submit</button>
             </form>
 
         </div>
@@ -81,6 +59,27 @@
         <br><br>
         <?php include('footer.php');?>
     </footer>
+
+    <?php      
+        include('data_conn.php');
+        $name = $_POST["cl-name"];
+        $phone_number = $_POST["cl-number"];  
+        $ta = $_POST["cl-ta"];
+        $email = $_POST["cl-email"];
+
+        $email = mysqli_real_escape_string($conn, $email); 
+        $ta = mysqli_real_escape_string($conn, $ta); 
+        
+        $sql = "INSERT INTO contact_us (`id`, `name`, `email`, `phone_number`, `woym`) VALUES (NULL, $name, $email, $phone_number, $ta)";
+            
+            if($conn->query($sql) === TRUE){  
+                echo "<h1><center> Registration Successful </center></h1>";  
+                header("location: term_conditions.php");
+            }  
+            else{  
+                echo "Error: " . $sql . "<br>" . $conn->error;
+            }
+    ?>
 
 </body>
 </html>

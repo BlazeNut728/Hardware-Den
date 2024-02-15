@@ -28,6 +28,7 @@ body {
 
    color: #ff8400;
    text-decoration: none;
+   transition: all 0.2s ease-in-out;
 
  }
 
@@ -42,6 +43,7 @@ body {
 
    color: #ff8400;
    text-decoration: none;
+   transition: all 0.2s ease-in-out;
 
  }
 
