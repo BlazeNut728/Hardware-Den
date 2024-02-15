@@ -3,9 +3,31 @@ body {
     padding: 0;
     overflow: scroll;
     transition: all 0.5s ease-in-out;
- }
+}
 
- .ar {
+.bg {
+
+    margin: auto;
+    width: 100%;
+    height: 100%;
+    background-color: #e07502;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.bgimg {
+    margin: auto;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.ar {
     font-family: Poppins;
     font-size: 1.4vh;
     font-style: normal;
@@ -16,47 +38,47 @@ body {
     margin-top: 2.1vh;
     margin-bottom: 0.5vh;
 
- }
+}
 
- .hm {
+.hm {
 
     color: #000;
     text-decoration: none;
- 
-  }
- 
-  .hm:hover {
- 
+
+}
+
+.hm:hover {
+
     color: #ff8400;
     text-decoration: none;
     transition: all 0.2s ease-in-out;
- 
-  }
- 
-  .lg {
- 
+
+}
+
+.lg {
+
     color: #000;
     text-decoration: none;
-    
- }
- 
- .lg:hover {
- 
+
+}
+
+.lg:hover {
+
     color: #ff8400;
     text-decoration: none;
     transition: all 0.2s ease-in-out;
- 
-  }
+
+}
 
 .stc {
 
-   color: #000; 
-   font-family: Poppins; 
-   font-size: 1.8vw; 
-   font-style: normal; 
-   font-weight: 600; 
-   line-height: normal; 
-   margin-bottom: 1.2vh;
+    color: #000;
+    font-family: Poppins;
+    font-size: 1.8vw;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    margin-bottom: 1.2vh;
 }
 
 .cu-container {
@@ -81,11 +103,52 @@ body {
 }
 
 .iyhac {
-    
+
     display: flex;
     font-size: 1.4vh;
     font-weight: 300;
     line-height: 3.0vh;
+}
+
+.cu-sb {
+
+    position: absolute;
+    right: 30vh;
+
+    width: 30.0vh;
+    height: 40.0vh;
+
+    border-radius: 1.0vh;
+
+}
+
+.cu-sb:hover {
+
+    box-shadow: 0 0.8vh 3.2vh 0 rgba( 31, 38, 135, 0.37 );
+    backdrop-filter: blur( 0.4vh );
+    -webkit-backdrop-filter: blur( 0.4vh );
+    border-radius: 1.0vh;
+    transition: all 0.5s ease-in-out;
+}
+
+.sb-head {
+
+    color: #000;
+    font-family: Poppins;
+    font-size: 1.0vw;
+    font-style: normal;
+    font-weight: 600;
+}
+
+.sb-info {
+
+    color: #000;
+    font-family: Poppins;
+    font-size: 0.7vw;
+    font-style: normal;
+    font-weight: 300;
+
+    margin-left: 6.3vh;
 }
 
 
@@ -111,6 +174,19 @@ body {
     padding-bottom: 0.7vh;
     padding-left: 2.5vh;
     padding-right: 2.5vh;
+
+}
+
+.cl-submit:hover {
+
+    background-color: #0156FF;
+    border-color: #0156FF;
+
+    box-shadow: 0 0.8vh 3.2vh 0 rgba( 31, 38, 135, 0.37 );
+    backdrop-filter: blur( 0.4vh );
+    -webkit-backdrop-filter: blur( 0.4vh );
+    border-radius: 2.0vh;
+    transition: all 0.5s ease-in-out;
 
 }
 
@@ -141,14 +217,14 @@ body {
 
     font-size: 1.4vh;
     font-weight: 600;
-    
+
 }
 
 .cl-text2 {
     margin-top: 2.5vh;
     font-size: 1.4vh;
     font-weight: 600;
-    
+
 }
 
 .cl-ta {
@@ -169,4 +245,3 @@ body {
     font-weight: 400;
 
 }
-  

@@ -32,6 +32,7 @@
     ?>
 <body>
         <?php include('navbar.php');?>
+
     <div class= "ar">
         <a class ="hm" href="#home">Home</a> <a style = "color:#ff8400;"> > </a> <a class ="lg" href="contact_us.php">Contact Us</a>
     </div>
@@ -43,6 +44,27 @@
    
 
     <div class = "cl-container">
+
+    <div class = cu-sb>
+
+        <i class="fa-solid fa-location-dot" style="font-size:1.9vh; padding: 1vh; margin-left: 2.25vh; margin-top: 2.4vh; color: black;"></i>
+        <a class = "sb-head"> Address: </a><br>
+        <a class = "sb-info"> 1234 Street Address, City, 1234 </a><br>
+
+        <i class="fa-solid fa-phone" style="font-size:1.9vh; padding: 1vh; margin-left: 2.25vh; margin-top: 2.4vh; color: black;"></i>
+        <a class = "sb-head"> Phone: </a><br>
+        <a class = "sb-info"> (00)1234 5678 </a><br>
+
+        <i class="fa-solid fa-clock" style="font-size:1.9vh; padding: 1vh; margin-left: 2.25vh; margin-top: 2.4vh; color: black;"></i>
+        <a class = "sb-head"> We are Open: </a><br>
+        <a class = "sb-info"> Monday - Friday: </a><br>
+        <a class = "sb-info"> 9:00 AM - 5:30 PM </a><br>
+
+        <i class="fa-solid fa-location-dot" style="font-size:1.9vh; padding: 1vh; margin-left: 2.25vh; margin-top: 2.4vh; color: black;"></i>
+        <a class = "sb-head"> Email: </a><br>
+        <a class = "sb-info" href = "hardwareden@gmail.com"> hardwareden@gmail.com </a>
+
+    </div>
 
         <div class = "cu-container"> 
         
