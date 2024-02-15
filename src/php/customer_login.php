@@ -60,7 +60,7 @@
                 <label for="pass" class = "cl-text2" >Password:</label>
                 <input type="password" id="cl-pass" name="cl-pass" class = "cl-pass" placeholder="Your Password" autocomplete = "off" required>
 
-                <input type="submit" value="submit" class="cl-submit">
+                <input type="submit" value="Submit" class="cl-submit">
             </form>
 
         </div>

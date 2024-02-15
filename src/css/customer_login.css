@@ -2,7 +2,6 @@ body {
     margin: 0;
     padding: 0;
     overflow: scroll;
-    background-color: #fffbf5;
     transition: all 0.5s ease-in-out;
     flex-direction: row;
  }
@@ -50,7 +49,6 @@ body {
     display: flex;
     width: 56.0vh;
     height: 41.5vh;
-    background-color: antiquewhite;
 
     margin-left: 37.0vh;
 
@@ -58,6 +56,13 @@ body {
     font-family: Poppins;
     word-wrap: break-word;
     flex-direction: column;
+
+    background: #fffbf5;
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    backdrop-filter: blur( 4.5px );
+    -webkit-backdrop-filter: blur( 4.5px );
+    border-radius: 10px;
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
 }
 
 .rc {
@@ -139,17 +144,29 @@ body {
 .cl-submit {
 
     /* left: -77.3vh; */
-    width: auto;
+    font-size: 1.4vh;
+    font-family: 'Poppins', sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    border-radius: 5vh;
+    border: 0.4vh solid var(--Color---3, #ff8400);
+    -webkit-text-fill-color: #ff8400;
+    text-decoration: none;
+
     margin-top: 3.0vh;
     margin-left: 5.7vh;
-    color: white;
-    font-size: 1.4vh;
-    font-family: Poppins;
-    font-weight: 600;
-    word-wrap: break-word;
-    border-radius: 5.0vh;
-    border-color: #ff8400;
-    background-color: #ff8400;
+
+    padding-top: 0.8vh;
+    padding-bottom: 0.8vh;
+    padding-left: 2.5vh;
+    padding-right: 2.5vh;
+}
+
+.cl-submit:hover {
+
+    -webkit-text-fill-color: #0156FF;
+    border-color: #0156FF;
+    transition-duration: 0.4s;
 
 }
 
@@ -170,4 +187,11 @@ body {
     font-family: Poppins;
     word-wrap: break-word;
     flex-direction: column;
+
+    background: #fffbf5;
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    backdrop-filter: blur( 4px );
+    -webkit-backdrop-filter: blur( 4px );
+    border-radius: 10px;
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
 }

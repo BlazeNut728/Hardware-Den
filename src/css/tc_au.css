@@ -24,12 +24,26 @@ body {
 
  }
 
+ .hm:hover {
+
+   color: #ff8400;
+   text-decoration: none;
+
+ }
+
  .lg {
 
    color: #000;
    text-decoration: none;
    
 }
+
+.lg:hover {
+
+   color: #ff8400;
+   text-decoration: none;
+
+ }
 
 .stc {
 

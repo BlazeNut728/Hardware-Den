@@ -16,7 +16,7 @@
 
         <div class = "feature">
             <div class = "f-cont1">
-                <i class="fa-solid fa-headset" style = "font-size: 2.9vh; border-radius: 65px; border: 2px solid #ff8400; padding: 1.8vh; background-color: #ff8400;"></i> <br>
+                <i class="fa-solid fa-headset" style = "font-size: 2.9vh; border-radius: 65px; border: 2px solid #ff8400; padding: 1.8vh; background-color: #ff8400; margin-top: 2.5vh;"></i> <br>
                 <div class = "f-head">
                     Product Support
                 </div>
@@ -26,7 +26,7 @@
             </div>
 
             <div class = "f-cont2">
-                <i class="fa-solid fa-user" style = "font-size: 2.9vh; border-radius: 65px; border: 2px solid #ff8400; padding: 1.8vh; background-color: #ff8400;"></i> <br>
+                <i class="fa-solid fa-user" style = "font-size: 2.9vh; border-radius: 65px; border: 2px solid #ff8400; padding: 1.8vh; background-color: #ff8400; margin-top: 2.5vh;"></i> <br>
                 <div class = "f-head">
                     Personal Account
                 </div>
@@ -36,7 +36,7 @@
             </div>
 
             <div class = "f-cont3">
-                <i class="fa-solid fa-tag" style = "font-size: 2.9vh; border-radius: 65px; border: 2px solid #ff8400; padding: 1.8vh; background-color: #ff8400;"></i> <br>
+                <i class="fa-solid fa-tag" style = "font-size: 2.9vh; border-radius: 65px; border: 2px solid #ff8400; padding: 1.8vh; background-color: #ff8400; margin-top: 2.5vh;"></i> <br>
                 <div class = "f-head">
                     Amazing Savings
                 </div>
@@ -76,7 +76,7 @@
                     <a class="hd3" href = "about_us.php">About Us
                     <a class="hd3" href = "">Search</a>
                     <a class="hd3" href = "term_conditions.php">Terms</a>
-                    <a class="hd3" href = "">Contact Us</a>
+                    <a class="hd3" href = "contact_us.php">Contact Us</a>
                     <a class="hd3" href = "">Orders and Returns</a>
                     <a class="hd3" href = "">Newsletter Subscription</a>
                 </div>
