@@ -8,6 +8,28 @@
     <script src="https://kit.fontawesome.com/6e301e326d.js" crossorigin="anonymous"></script>
     <title>Hardware Den</title>
 </head>
+    <?php      
+        include('data_conn.php');
+        if (isset($_POST['name']) && isset($_POST['number']) && isset($_POST['email']) && isset($_POST['ta']) ) {
+        $name = $_POST["name"];
+        $phone_number = $_POST["number"];  
+        $ta = $_POST["ta"];
+        $email = $_POST["email"];
+
+        $email = mysqli_real_escape_string($conn, $email); 
+        $ta = mysqli_real_escape_string($conn, $ta); 
+        
+        $sql = "INSERT INTO contact_us (id, name, email, phone_number, woym) VALUES (NULL, '$name', '$email', '$phone_number', '$ta')"; 
+            
+            if($conn->query($sql) === TRUE){  
+                $message = "We will get back to you soon.";
+                echo "<script>alert('$message');</script>"; 
+            }  
+            else{  
+                echo "Error: " . $sql . "<br>" . $conn->error;
+            }
+        }     
+    ?>
 <body>
         <?php include('navbar.php');?>
     <div class= "ar">
@@ -27,28 +49,28 @@
             <a class = "iyhac"> We love hearing from you, Hardware enthusiasts. </a>
             <a class = "iyhac"> Contact Us and we will make sure to get back to you as soon as possible. </a><br>
 
-            <form action="contact_us.php" class = "form-cu"  method="POST">
+            <form action="contact_us.php" id = "form-cu" class = "form-cu"  method="POST">
 
                 <div class="cu-wrapper">
                     <div>
                         <label class = "cl-text1" >Name</label>
-                        <input type="text" id="cl-name" name="cl-name" class = "cl-email" placeholder="Your Name" autocomplete = "off" required>
+                        <input type="text" id="name" name="name" class = "cl-email" placeholder="Your Name" autocomplete = "off" required>
                     </div>
                     <div>
                         <label class = "cl-text2" >Email</label>
-                        <input type="email" id="cl-email" name="cl-email" class = "cl-email" placeholder="Your Email" autocomplete = "off" required>
+                        <input type="email" id="email" name="email" class = "cl-email" placeholder="Your Email" autocomplete = "off" required>
                     </div>
                     <div>
                         <label class = "cl-text1" >Phone Number</label>
-                        <input type="number" id="cl-number" name="cl-number" class = "cl-email" placeholder="Your Number" autocomplete = "off" required>
+                        <input type="number" id="number" name="number" class = "cl-email" placeholder="Your Number" autocomplete = "off" required>
                     </div>
                 </div>
 
                 <br>
                 <label class = "cl-text1" >What's on your mind ?</label>
-                <textarea id="cl-ta" name="cl-ta" class = "cl-ta" rows="20" cols="115">Jot us a note and we'll quickly get back to you as soon as possible</textarea>
+                <textarea id="ta" name="ta" class = "cl-ta" rows="20" cols="115">Jot us a note and we'll quickly get back to you as soon as possible</textarea>
 
-                <button type="submit" class="cl-submit" name ="cl-submit" >Submit</button>
+                <button type="submit" class="cl-submit" name ="submit" >Submit</button>
             </form>
 
         </div>
@@ -59,27 +81,5 @@
         <br><br>
         <?php include('footer.php');?>
     </footer>
-
-    <?php      
-        include('data_conn.php');
-        $name = $_POST["cl-name"];
-        $phone_number = $_POST["cl-number"];  
-        $ta = $_POST["cl-ta"];
-        $email = $_POST["cl-email"];
-
-        $email = mysqli_real_escape_string($conn, $email); 
-        $ta = mysqli_real_escape_string($conn, $ta); 
-        
-        $sql = "INSERT INTO contact_us (`id`, `name`, `email`, `phone_number`, `woym`) VALUES (NULL, $name, $email, $phone_number, $ta)";
-            
-            if($conn->query($sql) === TRUE){  
-                echo "<h1><center> Registration Successful </center></h1>";  
-                header("location: term_conditions.php");
-            }  
-            else{  
-                echo "Error: " . $sql . "<br>" . $conn->error;
-            }
-    ?>
-
 </body>
 </html>

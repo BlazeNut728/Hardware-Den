@@ -73,7 +73,7 @@
         </div>
             <div class="grid-container">
                 <div class="grid-item">
-                    <a class="hd3" href = "about_us.php">About Us
+                    <a class="hd3" href = "about_us.php">About Us</a>
                     <a class="hd3" href = "">Search</a>
                     <a class="hd3" href = "term_conditions.php">Terms</a>
                     <a class="hd3" href = "contact_us.php">Contact Us</a>
@@ -130,9 +130,9 @@
         <script>
             <?php 
                 include('data_conn.php');
-
+                if (isset($_POST['email'])) {
                 $email = $_POST['email'];
-                $sql = "INSERT INTO newsletter (nw_id, email, Status) VALUES ('', '$email', '1')";
+                $sql = "INSERT INTO newsletter (nw_id, email, Status) VALUES (NULL, '$email', '1')";
                 if ($conn->query($sql) === TRUE) {
                     echo "New record created successfully";
                   } else {
@@ -140,6 +140,7 @@
                   }
                   
                   $conn->close();
+                }
             ?>
 
         </script>    
