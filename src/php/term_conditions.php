@@ -24,10 +24,10 @@
     <div class = "gtc">
     GENERAL TERMS AND CONDITIONS FOR SALE OF PRODUCTS AND SERVICES
     </div>
-    
-    <div class = "rules-card">
+        
+        <div class = "rules-card">
 
-    </div>
+        </div>
 
     <script>
         function displayRules() {

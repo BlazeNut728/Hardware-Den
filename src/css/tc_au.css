@@ -101,6 +101,7 @@ article {
    font-family: Poppins;
    flex-direction: column;
    justify-content: center;
+   
 }
 
 .au1:hover {
@@ -227,6 +228,14 @@ article {
    word-wrap: break-word;
 }
 
+.review-box:hover {
+
+   box-shadow: 0 0.8vh 3.2vh 0 rgba( 31, 38, 135, 0.37 );
+   backdrop-filter: blur( 0.4vh );
+   -webkit-backdrop-filter: blur( 0.4vh );
+   transition: all 0.5s ease-in-out;
+}
+
 .img3 {
 
    position: absolute;
@@ -272,9 +281,15 @@ article {
     margin-top: 2.8vh;
     margin-bottom: 2.6vh;
     margin-left: 9.0vh;
-    height: 1.5vh;
-    width: 13.5vh;
-    padding: 1.00vh;
+    width: 14.2vh;
+    padding: 0.8vh;
+}
+
+.luar:hover {
+
+   -webkit-text-fill-color: #0156FF;
+   border: 0.4vh solid #0156FF;
+   transition-duration: 0.4s;
 }
 
 .btn-rw {
@@ -294,4 +309,3 @@ article {
    border: 0.4vh #ff8400;
    border-radius: 50%;
 }
-

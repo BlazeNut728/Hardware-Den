@@ -1,9 +1,7 @@
-<?php 
-
-session_start();
-
-session_unset();
-
-session_destroy();
-
-header("Location: about_us.php");
+<?php
+   session_start();
+   unset($_SESSION["user"]);
+   unset($_SESSION["pass"]);
+   
+   echo 'You have cleaned session';
+   header('Refresh: 2; URL = customer_login.php');

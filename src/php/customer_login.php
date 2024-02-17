@@ -10,6 +10,8 @@
 </head>
 <?php      
             include('data_conn.php');
+            $msg = '';
+            $id = '';
             if (isset($_POST['cl-email'])) {
             $email = $_POST["cl-email"];  
             $password = $_POST["cl-pass"];  
@@ -20,18 +22,24 @@
                 $username = mysqli_real_escape_string($conn, $email);  
                 $password = mysqli_real_escape_string($conn, $password);  
             
-                $sql = "SELECT * FROM `login_credential` where email = '$email' and pass = '$password'";  
+                $sql = "SELECT * FROM `login_credential` where email = '$email' and pass = '$password'";
                 $result = mysqli_query($conn, $sql);  
-                $row = mysqli_fetch_array($result, MYSQLI_ASSOC);  
+                $row = mysqli_fetch_array($result, MYSQLI_ASSOC); 
                 $count = mysqli_num_rows($result);  
                 
                 if($count == 1){  
-                    echo "<h1><center> Login successful </center></h1>"; 
-                    header("location: term_conditions.php");
+                    session_id($row["user"]);
+                    $_SESSION["loggedin"] = true;
+                    $_SESSION["email"] = $row["email"];
+                    $_SESSION["admin"] = $row["admin"];
+                    session_start();
+                    header ("Location: customer_dashboard.php");
                 }  
                 else{  
-                    echo "<h1> Login failed. Invalid username or password.</h1>";  
-                    header("location: customer_login.php");
+                    $msg = 'Wrong username or password';
+                    if (session_status() === PHP_SESSION_ACTIVE) {
+                        session_destroy();
+                    }
                 }
             }     
         ?>
@@ -61,6 +69,7 @@
                 <input type="password" id="cl-pass" name="cl-pass" class = "cl-pass" placeholder="Your Password" autocomplete = "off" required>
 
                 <input type="submit" value="Submit" class="cl-submit">
+                <a class = "cl-em"><?php echo $msg; ?></a>
             </form>
 
         </div>

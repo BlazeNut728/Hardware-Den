@@ -50,6 +50,7 @@ body {
     border: 2.0vh;
     border-color: #020202;
     display: flex;
+    transition: all 0.5s ease-in-out;
 
 }
 

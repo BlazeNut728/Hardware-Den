@@ -91,7 +91,7 @@ body {
 .cu-sb {
 
     position: absolute;
-    right: 30vh;
+    margin-left: 120.0vh;
 
     width: 30.0vh;
     height: 40.0vh;

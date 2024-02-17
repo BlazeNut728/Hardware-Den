@@ -50,7 +50,7 @@ body {
     width: 56.0vh;
     height: 41.5vh;
 
-    margin-left: 37.0vh;
+    margin-left: 13.1vw;
 
     color: black;
     font-family: Poppins;
@@ -84,6 +84,12 @@ body {
     font-size: 1.4vh;
     font-weight: 300;
     line-height: 3.0vh;
+}
+
+.cl-container {
+
+    display: grid;
+    grid-template-columns: 56.0vh 56.0vh;
 }
 
 .cl-email {
@@ -171,18 +177,24 @@ body {
 
 }
 
+.cl-em {
+
+    color: black;
+    background-color: #fffbf5;
+    font-size: 1.4vh;
+    margin-left: 6.0vw;
+    margin-top: 0.2vh;
+    padding: 0.8vh;
+    border-radius: 10.0vh;
+    transition: all 0.3s ease-out;
+}
+
 
 .register-container {
 
-    position: absolute;
-    left: 65.2vh;
-    top: 28.0vh;
-
     width: 56.0vh;
-    height: 41.5vh;
     background-color: antiquewhite;
-
-    margin-left: 37.0vh;
+    margin-left: 20.2vw;
 
     color: black;
     font-family: Poppins;
@@ -190,9 +202,9 @@ body {
     flex-direction: column;
 
     background: #fffbf5;
-    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
-    backdrop-filter: blur( 4px );
-    -webkit-backdrop-filter: blur( 4px );
-    border-radius: 10px;
-    border: 1px solid rgba( 255, 255, 255, 0.18 );
+    box-shadow: 0 0.8vh 3.2vh 0 rgba( 31, 38, 135, 0.37 );
+    backdrop-filter: blur( 0.4vh );
+    -webkit-backdrop-filter: blur( 0.4vw );
+    border-radius: 1.0vw;
+    border: 0.1vw solid rgba( 255, 255, 255, 0.18 );
 }
