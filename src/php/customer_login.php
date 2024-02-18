@@ -8,41 +8,41 @@
     <script src="https://kit.fontawesome.com/6e301e326d.js" crossorigin="anonymous"></script>
     <title>Hardware Den</title>
 </head>
-<?php      
-            include('data_conn.php');
-            $msg = '';
-            $id = '';
-            if (isset($_POST['cl-email'])) {
+    <?php      
+        include('data_conn.php');
+        $msg = '';
+        $id = '';
+        if (isset($_POST['cl-email'])) {
             $email = $_POST["cl-email"];  
             $password = $_POST["cl-pass"];  
             
-                //to prevent from mysqli injection  
-                $username = stripcslashes($email);  
-                $password = stripcslashes($password);  
-                $username = mysqli_real_escape_string($conn, $email);  
-                $password = mysqli_real_escape_string($conn, $password);  
+            //to prevent from mysqli injection  
+            $username = stripcslashes($email);  
+            $password = stripcslashes($password);  
+            $username = mysqli_real_escape_string($conn, $email);  
+            $password = mysqli_real_escape_string($conn, $password);  
             
-                $sql = "SELECT * FROM `login_credential` where email = '$email' and pass = '$password'";
-                $result = mysqli_query($conn, $sql);  
-                $row = mysqli_fetch_array($result, MYSQLI_ASSOC); 
-                $count = mysqli_num_rows($result);  
+            $sql = "SELECT * FROM `login_credential` where email = '$email' and pass = '$password'";
+            $result = mysqli_query($conn, $sql);  
+            $row = mysqli_fetch_array($result, MYSQLI_ASSOC); 
+            $count = mysqli_num_rows($result);  
                 
-                if($count == 1){  
-                    session_id($row["user"]);
-                    $_SESSION["loggedin"] = true;
-                    $_SESSION["email"] = $row["email"];
-                    $_SESSION["admin"] = $row["admin"];
-                    session_start();
-                    header ("Location: customer_dashboard.php");
-                }  
-                else{  
-                    $msg = 'Wrong username or password';
-                    if (session_status() === PHP_SESSION_ACTIVE) {
-                        session_destroy();
-                    }
-                }
-            }     
-        ?>
+            if($count == 1){  
+                    
+                $cookie_name = "user";
+                $cookie_value = $row["user"];
+                session_start();
+                setcookie($cookie_name, $cookie_value, time() + (86400 * 30), "/"); // 86400 = 1 day
+                header ('Location: customer_dashboard.php');
+            }  
+            else{  
+                $msg = 'Wrong username or password';
+                if (session_status() === PHP_SESSION_ACTIVE) {
+                     session_destroy();
+                 }
+            }
+        }     
+    ?>
 <body>
         <?php include('navbar.php');?>
     <div class= "ar">

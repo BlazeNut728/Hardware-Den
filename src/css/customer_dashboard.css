@@ -47,7 +47,6 @@ body {
 .cd-gc {
     display: grid;
     grid-template-columns: 17.5% auto 1%;
-    background-color: #2196F3;
     width: 80%;
     margin-left: 13.1vw;
 }
@@ -78,7 +77,7 @@ body {
 
     color: grey; 
     font-family: Poppins; 
-    font-size: 0.6vw; 
+    font-size: 0.7vw; 
     font-style: normal; 
     font-weight: 300; 
     text-decoration: none;
@@ -115,7 +114,17 @@ body {
     font-style: normal; 
     font-weight: 600; 
     line-height: normal;
-    margin-left: 1.5vw;
+    margin-left: 2.5vw;
+
+}
+
+.cd-divider {
+
+    background-color: grey;
+    width: 80%;
+    height: 0.2vh;
+    margin-top: 2.0vh;
+    margin-left: 2.5vw;
 
 }
 
@@ -136,20 +145,162 @@ body {
     font-style: normal; 
     font-weight: 500; 
     text-decoration: none;
-    margin-left: 1.5vw;
+    margin-left: 2.5vw;
     transition: all 0.5s ease-in-out;
 
 }
 
-.Password-Modal {
-    display: none; /* Hidden by default */
-    position: fixed; /* Stay in place */
-    z-index: 1; /* Sit on top */
-    left: 0;
-    top: 0;
-    width: 100%; /* Full width */
-    height: 100%; /* Full height */
-    overflow: auto; /* Enable scroll if needed */
-    background-color: rgb(0,0,0); /* Fallback color */
-    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+.ci-info{
+
+    margin-left: 2.5vw;
+    color: grey; 
+    font-family: Poppins; 
+    font-size: 0.8vw; 
+    font-style: normal; 
+    font-weight: 300; 
+    text-decoration: none;
+    transition: all 0.5s ease-in-out;
+
+}
+
+.ci-edit {
+
+    margin-left: 2.5vw;
+
+    font-size: 1.4vh;
+    font-family: 'Poppins', sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    border-radius: 1.0vh;
+    border: 0.3vh solid var(--Color---3, #ff8400);
+    -webkit-text-fill-color: #ff8400;
+    background-color: white;
+    text-decoration: none;
+
+    padding-top: 0.3vh;
+    padding-bottom: 0.4vh;
+    padding-left: 1.5vh;
+    padding-right: 1.5vh;
+
+}
+
+.ci-edit:hover {
+
+    -webkit-text-fill-color: #0156FF;
+    border-color: #0156FF;
+    transition-duration: 0.2s;
+
+}
+
+.Modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    top: 30%;
+    left: 40%;
+
+    width: 20.0vw;
+    overflow: auto;
+    
+    border: 0.4vh solid #ff8400;
+    border-radius: 1.5vh;
+
+    background: rgba( 255, 255, 255, 0.25 );
+    box-shadow: 0 0.8vh 3.2vh 0 rgba( 31, 38, 135, 0.37 );
+    backdrop-filter: blur( 0.4vh );
+    -webkit-backdrop-filter: blur( 0.4vh );
+    border-radius: 2.0vh;
+    transition: all 0.5s ease-in-out;
   }
+
+.modal-header {
+    color: black; 
+    font-family: Poppins; 
+    font-size: 1.0vw; 
+    font-style: normal; 
+    font-weight: 600; 
+    text-decoration: none;
+    transition: all 0.5s ease-in-out;
+    padding: 0.5vh;
+}
+
+.modal-divider {
+
+    width: 100%;
+    height: 0.4vh;
+    background-color: #ff8400;
+}
+
+.cd-text{
+
+    color: black;
+    font-family: Poppins; 
+    font-size: 0.8vw; 
+    font-style: normal; 
+    font-weight: 400; 
+    text-decoration: none;
+    transition: all 0.5s ease-in-out;
+
+}
+
+.cd-pass {
+
+    display: flex;
+    font-size: 1.8vh;
+    -webkit-text-fill-color: #000;
+    -webkit-text-stroke-color: #000;
+    border-color: #000;
+    border-radius: 0.8vh;
+    border: 0.2vh solid grey;
+    margin-left: 4.0vw;
+    text-align: center;
+
+}
+
+.modal-body {
+
+    text-align: center;
+}
+
+.modal-content {
+    border: 0.1vh solid #888;
+    box-shadow: 0 0.4vh 0.8vh 0 rgba(0,0,0,0.2),0 0.6vh 2.0vh 0 rgba(0,0,0,0.19);
+}
+
+.modal-submit {
+
+    font-size: 1.4vh;
+    font-family: 'Poppins', sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    border-radius: 5vh;
+    border: 0.4vh solid var(--Color---3, #ff8400);
+    -webkit-text-fill-color: #ff8400;
+    background-color: white;
+    text-decoration: none;
+
+    padding-top: 0.8vh;
+    padding-bottom: 0.8vh;
+    padding-left: 2.5vh;
+    padding-right: 2.5vh;
+}
+
+.modal-submit:hover {
+
+    -webkit-text-fill-color: white;
+    background-color: #ff8400;
+    transition-duration: 0.4s;
+
+}
+
+.cd-em {
+
+    color: black;
+    background-color: #fffbf5;
+    font-size: 1.4vh;
+    margin-left: 6.0vw;
+    margin-top: 0.2vh;
+    padding: 0.8vh;
+    border-radius: 10.0vh;
+    transition: all 0.3s ease-out;
+}

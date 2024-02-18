@@ -36,6 +36,9 @@
           </form>
         </div>
         <a class="of" href="#CRT"><i class="fa badge fa-lg" value=8 style="font-size:1.9vh; padding: 1vh; margin-left: 2.25vh; margin-top: 3.3vh; color: black;">&#xf07a;</i></a>
-        <a class="of" href="#PRF"><i class="fa-solid fa-user" value=8 style="font-size:1.9vh; padding: 1vh; margin-left: 2.25vh; margin-top: 2.4vh; color: black;"></i></a>      
-      </div>
-      <div class = "sep"></div>
+        <a class="of" href="#PRF"><i class="fa-solid fa-user" value=8 style="font-size:1.9vh; padding: 1vh; margin-left: 2.25vh; margin-top: 2.4vh; color: black;">
+
+        
+          </i></a>      
+          </div>
+          <div class = "sep"></div>
