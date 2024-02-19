@@ -154,6 +154,15 @@ if (isset($_COOKIE["user"])) {
 
     }
 
+    if (isset($_POST['cd-logout'])) {
+
+        echo 'TEST' ;
+
+            unset($_COOKIE['user']); 
+            setcookie('user', '', -1, '/');
+            header ('Location: customer_login.php');
+    }
+
 }
 
 else {
@@ -193,7 +202,7 @@ else {
 
             <a class="sidebar-item" href="#AB"> My Product Reviews </a><br><br>
             <a class="sidebar-item" href="#NW-Modal"> Newsletter Subscription </a><br><br>
-            <button class="sidebar-item" href="#MO"> Logout </button><br>
+            <button class="sidebar-item" id="cd-logout" name="cd-logout" > Logout </button><br>
         </div>
 
         <div class="cd-gi" style="width: 100%; height: 25.0vh;">
