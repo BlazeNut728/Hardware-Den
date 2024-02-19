@@ -1,65 +1,34 @@
-function ChangePassword(){
+var btn = document.querySelectorAll("button.ci-edit");
 
-    var modal = document.getElementById("Password-Modal");
+// All page modals
+var modals = document.querySelectorAll('.modal');
 
-    var btn = document.getElementById("ai-cp");
+// Get the <span> element that closes the modal
+var spans = document.getElementsByClassName("close");
 
-    var span = document.getElementsByClassName("close")[0];
-    btn.onclick = function() {
-    modal.style.display = "block";
+// When the user clicks the button, open the modal
+for (var i = 0; i < btn.length; i++) {
+    btn[i].onclick = function(e) {
+       e.preventDefault();
+       modal = document.querySelector(e.target.getAttribute("href"));
+       modal.style.display = "block";
     }
-
-    span.onclick = function() {
-    modal.style.display = "none";
+   }
+   
+   // When the user clicks on <span> (x), close the modal
+   for (var i = 0; i < spans.length; i++) {
+    spans[i].onclick = function() {
+       for (var index in modals) {
+         if (typeof modals[index].style !== 'undefined') modals[index].style.display = "none";    
+       }
     }
-
-    window.onclick = function(event) {
-    if (event.target == modal) {
-        modal.style.display = "none";
-    }
-    } 
-}
-
-function Edit(){
-
-    var modal = document.getElementById("Edit-Modal");
-
-    var btn = document.getElementById("ai-edit");
-
-    var span = document.getElementsByClassName("close")[0];
-    btn.onclick = function() {
-    modal.style.display = "block";
-    }
-
-    span.onclick = function() {
-    modal.style.display = "none";
-    }
-
-    window.onclick = function(event) {
-    if (event.target == modal) {
-        modal.style.display = "none";
-    }
-    } 
-}
-
-function NewsletterEdit(){
-
-    var modal = document.getElementById("nw-Modal");
-
-    var btn = document.getElementById("ai-nwedit");
-
-    var span = document.getElementsByClassName("close")[0];
-    btn.onclick = function() {
-    modal.style.display = "block";
-    }
-
-    span.onclick = function() {
-    modal.style.display = "none";
-    }
-
-    window.onclick = function(event) {
-    if (event.target == modal) {
-        modal.style.display = "none";
-    }
-    } 
-}
+   }
+   
+   // When the user clicks anywhere outside of the modal, close it
+   window.onclick = function(event) {
+       if (event.target.classList.contains('modal')) {
+        for (var index in modals) {
+         if (typeof modals[index].style !== 'undefined') modals[index].style.display = "none";    
+        }
+       }
+   }
