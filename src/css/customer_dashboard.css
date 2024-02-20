@@ -201,9 +201,7 @@ body {
 
     width: 15.0vw;
     overflow: auto;
-    
-    border: 0.4vh solid #ff8400;
-    border-radius: 1.5vh;
+    border-radius: 2.0vh;
 
     background: rgba( 255, 255, 255, 0.25 );
     box-shadow: 0 0.8vh 3.2vh 0 rgba( 31, 38, 135, 0.37 );
@@ -263,7 +261,6 @@ body {
 }
 
 .modal-content {
-    border: 0.1vh solid #888;
     box-shadow: 0 0.4vh 0.8vh 0 rgba(0,0,0,0.2),0 0.6vh 2.0vh 0 rgba(0,0,0,0.19);
 }
 
@@ -307,9 +304,9 @@ body {
 
 .round {
     position: relative;
-  }
+}
   
-  .round label {
+.round label {
     background-color: #fff;
     border: 0.4vh solid darkgray;
     border-radius: 50%;
@@ -319,9 +316,9 @@ body {
     position: absolute;
     top: 0;
     width: 2.8vh;
-  }
+}
   
-  .round label:after {
+.round label:after {
     border: 0.4vh solid #fff;
     border-top: none;
     border-right: none;
@@ -333,22 +330,41 @@ body {
     top: 0.8vh;
     transform: rotate(-45deg);
     width: 1.2vh;
-  }
+}
   
-  .round input[type="checkbox"] {
+.round input[type="checkbox"] {
     visibility: hidden;
-  }
+}
   
-  .round input[type="checkbox"]:checked + label {
+.round input[type="checkbox"]:checked + label {
     background-color: #ff8400;
     border-color: #ff8400;
-  }
+}
   
-  .round input[type="checkbox"]:checked + label:after {
+.round input[type="checkbox"]:checked + label:after {
     opacity: 1;
-  }
+}
 
-  .cd-checkbox-container {
+.cd-checkbox-container {
 
     margin-left: 6.5vw;
-  }
+}
+
+.cd-selector {
+
+    display: flex;
+    font-size: 1.8vh;
+    width: 10.0vw;
+    -webkit-text-fill-color: #000;
+    -webkit-text-stroke-color: #000;
+    border-color: #000;
+    border-radius: 0.8vh;
+    border: 0.2vh solid grey;
+    margin-left: 2.5vw;
+    text-align: center;
+    align-items: center;
+    align-self: center;
+    align-content: center;
+    
+}
+  

@@ -6,6 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="../css/customer_dashboard.css">
     <link rel="icon" type="images/x-icon" href="../../images/favicon.ico" />
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  
+    <script src="//geodata.solutions/includes/countrystatecity.js"></script>
     <script src="https://kit.fontawesome.com/6e301e326d.js" crossorigin="anonymous"></script>
     <title>Hardware Den</title>
 </head>
@@ -135,22 +140,110 @@ if (isset($_COOKIE["user"])) {
         }
     } 
 
-    if (isset($_POST['cd-ba'])) {
+    if (isset($_POST['cd-ba']) or isset($_POST['ba-country']) or isset($_POST['ba-state']) or isset($_POST['ba-city']) or isset($_POST['ba-pincode'])) {
 
         $cd_ba = $_POST["cd-ba"];
+        $ba_city = $_POST["ba-city"];
+        $ba_pincode = $_POST["ba-pincode"];
+        $country = $_POST["ba-country"];
+        $state = $_POST["ba-state"];
 
-        $changedetail = "UPDATE `login_credential` SET billing_address ='$cd_ba' WHERE id = '$id'";
-        $cd_update = mysqli_query($conn, $changedetail);
-        header ('Location: customer_dashboard.php');
+        $cd_ba = mysqli_real_escape_string($conn, $cd_ba);
+        $country = mysqli_real_escape_string($conn, $country);
+        $state = mysqli_real_escape_string($conn, $state);
+
+        if(!empty($cd_ba)) {
+
+            $changedetail = "UPDATE `login_credential` SET billing_address ='$cd_ba' WHERE id = '$id'";
+            $cd_update = mysqli_query($conn, $changedetail);
+            header ('Location: customer_dashboard.php');
+
+        }
+
+        if(!empty($country)) {
+
+            $changedetail = "UPDATE `login_credential` SET ba_country ='$country' WHERE id = '$id'";
+            $cd_update = mysqli_query($conn, $changedetail);
+            header ('Location: customer_dashboard.php');
+
+        }
+
+        if(!empty($state)) {
+
+            $changedetail = "UPDATE `login_credential` SET ba_state ='$state' WHERE id = '$id'";
+            $cd_update = mysqli_query($conn, $changedetail);
+            header ('Location: customer_dashboard.php');
+
+        }
+
+        if(!empty($ba_city)) {
+
+            $changedetail = "UPDATE `login_credential` SET ba_city ='$ba_city' WHERE id = '$id'";
+            $cd_update = mysqli_query($conn, $changedetail);
+            header ('Location: customer_dashboard.php');
+
+        }
+
+        if(!empty($ba_pincode)) {
+
+            $changedetail = "UPDATE `login_credential` SET ba_pincode ='$ba_pincode' WHERE id = '$id'";
+            $cd_update = mysqli_query($conn, $changedetail);
+            header ('Location: customer_dashboard.php');
+
+        }
 
     }
-    if (isset($_POST['cd-sa'])) {
+    if (isset($_POST['cd-sa']) or isset($_POST['sa-country']) or isset($_POST['sa-state']) or isset($_POST['sa-city']) or isset($_POST['sa-pincode'])) {
 
         $cd_sa = $_POST["cd-sa"];
+        $sa_city = $_POST["sa-city"];
+        $sa_pincode = $_POST["sa-pincode"];
+        $country = $_POST["sa-country"];
+        $state = $_POST["sa-state"];
 
-        $changedetail = "UPDATE `login_credential` SET shipping_address ='$cd_sa' WHERE id = '$id'";
-        $cd_update = mysqli_query($conn, $changedetail);
-        header ('Location: customer_dashboard.php');
+        $cd_ba = mysqli_real_escape_string($conn, $cd_ba);
+        $country = mysqli_real_escape_string($conn, $country);
+        $state = mysqli_real_escape_string($conn, $state);
+
+        if(!empty($cd_sa)) {
+
+            $changedetail = "UPDATE `login_credential` SET shipping_address ='$cd_sa' WHERE id = '$id'";
+            $cd_update = mysqli_query($conn, $changedetail);
+            header ('Location: customer_dashboard.php');
+
+        }
+
+        if(!empty($country)) {
+
+            $changedetail = "UPDATE `login_credential` SET sa_country ='$country' WHERE id = '$id'";
+            $cd_update = mysqli_query($conn, $changedetail);
+            header ('Location: customer_dashboard.php');
+
+        }
+
+        if(!empty($state)) {
+
+            $changedetail = "UPDATE `login_credential` SET sa_state ='$state' WHERE id = '$id'";
+            $cd_update = mysqli_query($conn, $changedetail);
+            header ('Location: customer_dashboard.php');
+
+        }
+
+        if(!empty($sa_city)) {
+
+            $changedetail = "UPDATE `login_credential` SET sa_city ='$sa_city' WHERE id = '$id'";
+            $cd_update = mysqli_query($conn, $changedetail);
+            header ('Location: customer_dashboard.php');
+
+        }
+
+        if(!empty($sa_pincode)) {
+
+            $changedetail = "UPDATE `login_credential` SET sa_pincode ='$sa_pincode' WHERE id = '$id'";
+            $cd_update = mysqli_query($conn, $changedetail);
+            header ('Location: customer_dashboard.php');
+
+        }
 
     }
 
@@ -241,7 +334,11 @@ else {
                     <a class="ci-head"> Default Billing Address </a><br><br>
 
                     <a id="ai-name" class="ci-info">
-                        <?php echo $ba; ?></a>
+                        <?php echo $ba; ?><br><br>
+                        <?php echo $row['ba_city']; ?>
+                        <?php echo $row['ba_pincode']; ?>
+                        <?php echo $row['ba_state']; ?>
+                        <?php echo $row['ba_country']; ?>
                     </a><br><br><br>
 
                     <button id="ai-baedit" href="#BA-Modal" class="ci-edit">Edit</button>
@@ -261,7 +358,7 @@ else {
         <!-- Modal content -->
         <div class="modal-content">
             <div class="modal-header">
-                <button class="close" style="position: fixed; top: 3%; right: 3%; font-size: 1.2vh; font-weight: 600; color: white; border-radius: 100%; border: 0.1vh solid #f75a5a; background-color: #f75a5a; color: #f75a5a;">X</button>
+                <button class="close" style="position: fixed; top: 3%; right: 3%; font-size: 1.2vh; font-weight: 600; color: white; border-radius: 2.0vh; border: 0.1vh solid #f75a5a; background-color: #f75a5a; ">X</button>
             </div>
             <div class="modal-body">
                 <br>
@@ -290,7 +387,7 @@ else {
         <!-- Modal content -->
         <div class="modal-content">
             <div class="modal-header">
-                <button class="close" style="position: fixed; top: 3%; right: 3%; font-size: 1.2vh; font-weight: 600; color: white; border-radius: 100%; border: 0.1vh solid #f75a5a; background-color: #f75a5a; color: #f75a5a;">X</button>
+                <button class="close" style="position: fixed; top: 3%; right: 3%; font-size: 1.2vh; font-weight: 600; color: white; border-radius: 2.0vh; border: 0.1vh solid #f75a5a; background-color: #f75a5a; ">X</button>
             </div>
             <div class="modal-body">
                 <br>
@@ -316,7 +413,7 @@ else {
         <!-- Modal content -->
         <div class="modal-content">
             <div class="modal-header">
-                <button class="close" style="position: fixed; top: 3%; right: 3%; font-size: 1.2vh; font-weight: 600; color: white; border-radius: 100%; border: 0.1vh solid #f75a5a; background-color: #f75a5a; color: #f75a5a;">X</button>
+                <button class="close" style="position: fixed; top: 3%; right: 3%; font-size: 1.2vh; font-weight: 600; color: white; border-radius: 2.0vh; border: 0.1vh solid #f75a5a; background-color: #f75a5a; ">X</button>
             </div>
             <div class="modal-body">
                 <br>
@@ -341,14 +438,31 @@ else {
         <!-- Modal content -->
         <div class="modal-content">
             <div class="modal-header">
-                <button class="close" style="position: fixed; top: 3%; right: 3%; font-size: 1.2vh; font-weight: 600; color: white; border-radius: 100%; border: 0.1vh solid #f75a5a; background-color: #f75a5a; color: #f75a5a;">X</button>
+                <button class="close" style="position: fixed; top: 3%; right: 3%; font-size: 1.2vh; font-weight: 600; color: white; border-radius: 2.0vh; border: 0.1vh solid #f75a5a; background-color: #f75a5a; ">X</button>
             </div>
             <div class="modal-body">
                 <br>
 
                 <form action="customer_dashboard.php" method="POST">
                     <a class="cd-text">Billing Address:</a><br>
-                    <input type="text" id="cd-ba" name="cd-ba" class="cd-pass" autocomplete="off" required><br>
+                    <input type="text" id="cd-ba" name="cd-ba" class="cd-pass" autocomplete="off"><br>
+
+                        <a class="cd-text">Country:</a><br>
+                        <select id="country" name="ba-country" class="cd-selector">
+                            <option>_</option>
+                        </select><br>
+
+                        <a class="cd-text">State:</a><br>
+                        <select id="state" name="ba-state" class="cd-selector">
+                            <option>_</option>
+                        </select><br><br>
+
+                        <a class="cd-text">City:</a><br>
+                        <input type="text" id="ba-city" name="ba-city" class="cd-pass" autocomplete="off"><br>
+
+                        <a class="cd-text">Pincode:</a><br>
+                        <input type="number" id="ba-pincode" name="ba-pincode" class="cd-pass" autocomplete="off"><br>
+
                     <button id="modal-submit" class="modal-submit">Save Changes</button><br>
                     <a class="cl-em"><?php echo $msg; ?></a>
                 </form>
@@ -362,7 +476,7 @@ else {
         <!-- Modal content -->
         <div class="modal-content">
             <div class="modal-header">
-                <button class="close" style="position: fixed; top: 3%; right: 3%; font-size: 1.2vh; font-weight: 600; color: white; border-radius: 100%; border: 0.1vh solid #f75a5a; background-color: #f75a5a; color: #f75a5a;">X</button>
+                <button class="close" style="position: fixed; top: 3%; right: 3%; font-size: 1.2vh; font-weight: 600; color: white; border-radius: 2.0vh; border: 0.1vh solid #f75a5a; background-color: #f75a5a; ">X</button>
             </div>
             <div class="modal-body">
                 <br>
@@ -370,6 +484,23 @@ else {
                 <form action="customer_dashboard.php" method="POST">
                     <a class="cd-text">Shipping Address:</a><br>
                     <input type="text" id="cd-sa" name="cd-sa" class="cd-pass" autocomplete="off" required><br>
+
+                    <a class="cd-text">Country:</a><br>
+                        <select id="country" name="sa-country" class="cd-selector">
+                            <option>_</option>
+                        </select>
+
+                        <a class="cd-text">State:</a><br>
+                        <select id="state" name="sa-state" class="cd-selector">
+                            <option>_</option>
+                        </select>
+
+                        <a class="cd-text">City:</a><br>
+                        <input type="text" id="sa-city" name="sa-city" class="cd-pass" autocomplete="off"><br>
+
+                        <a class="cd-text">Pincode:</a><br>
+                        <input type="number" id="sa-pincode" name="sa-pincode" class="cd-pass" autocomplete="off"><br>
+
                     <button id="modal-submit" class="modal-submit">Save Changes</button><br>
                     <a class="cl-em"><?php echo $msg; ?></a>
                 </form>
@@ -380,6 +511,8 @@ else {
     </div>
 
     <script src="../js/modal.js"></script>
+    <script src="../js/country-states.js"></script>
+    <script src="../js/country-selector.js"></script>
 
     <footer>
         <br><br>
