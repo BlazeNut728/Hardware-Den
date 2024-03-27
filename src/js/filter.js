@@ -1,33 +1,44 @@
-$(document).ready(function(){
-
-    $(".common_selector").click(function(){
-        var action = 'data';
-
-        var category = get_filter_text('category');
-        var manufacturer = get_filter_text('manufacturer');
-        var cpu_brand = get_filter_text('cpu_brand');
-        var ram_size = get_filter_text('ram_size');
-        var storage_size = get_filter_text('storage_size');
-
-        $.ajax({
-
-            url: 'action.php',
-            method: 'POST',
-            data: {action: action, category: category, manufacturer: manufacturer, cpu_brand: cpu_brand, ram_size: ram_size, storage_size: storage_size},
-            success: function(data) {
-                $('#result').html(response);
-            }
-        });
-
+$(document).ready(function () {
+    $(".common_selector").click(function () {
+        filter_products();
     });
 
-    function get_filter_text(text_id) {
-        var filterData = [];
-        $('#' + text_id + ':checked').each(function() {
+    function filter_products() {
+        var category = $(".category:checked").map(function () {
+            return $(this).val();
+        }).get();
 
-            filterData.push($('#' + this.value).val());
+        var manufacturer = $(".manufacturer:checked").map(function () {
+            return $(this).val();
+        }).get();
+
+        var cpu_brand = $(".cpu_brand:checked").map(function () {
+            return $(this).val();
+        }).get();
+
+        var ram_size = $(".ram_size:checked").map(function () {
+            return $(this).val();
+        }).get();
+
+        var storage_size = $(".storage_size:checked").map(function () {
+            return $(this).val();
+        }).get();
+
+        var action = "filter";
+        $.ajax({
+            url: "filter_action.php",
+            method: "POST",
+            data: {
+                action: action,
+                category: category,
+                manufacturer: manufacturer,
+                cpu_brand: cpu_brand,
+                ram_size: ram_size,
+                storage_size: storage_size
+            },
+            success: function (response) {
+                $("#result").html(response);
+            }
         });
-
-        return filterData;
     }
 });
