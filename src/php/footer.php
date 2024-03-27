@@ -120,11 +120,11 @@
         <div class = "bl">
             <a class="of" href="#PRF"><i class="fa-brands fa-square-facebook" style="font-size:1.9vh; padding: 1vh; margin-left: 18.25vh; margin-top: 0.9vh; color: white;"></i></a>
             <a class="of" href="#PRF"><i class="fa-brands fa-instagram" style="font-size:1.9vh; padding: 1vh; margin-left: 1.1vh; margin-top: 0.9vh; color: white;"></i></a>
-            <img class = "i1" src = "https://media.discordapp.net/attachments/1196163965110202440/1199068430238761030/image.png?ex=65c1327f&is=65aebd7f&hm=1a93d2b666212c64631d1745ed68fa0c490ae47f4dd1ad06eda1ce8689e9f17a&=&format=webp&quality=lossless&width=62&height=39">
-            <img class = "i2" src = "https://media.discordapp.net/attachments/1196163965110202440/1199068430519775302/image.png?ex=65c1327f&is=65aebd7f&hm=5caca784d75519c62af4b494aff93eebc5c770423e3bfd695b82ee393f14f1ff&=&format=webp&quality=lossless&width=60&height=39">
-            <img class = "i2" src = "https://media.discordapp.net/attachments/1196163965110202440/1199068430733672628/image.png?ex=65c1327f&is=65aebd7f&hm=bea4d07b690f02f45b43bc2cf42f19739690fdff8ad2bb55c2c0fc5723b807ab&=&format=webp&quality=lossless&width=60&height=39">
-            <img class = "i2" src = "https://media.discordapp.net/attachments/1196163965110202440/1199068430968573982/image.png?ex=65c1327f&is=65aebd7f&hm=60e167b7f297826e5d9ab58db7d999d37ba7d743eea9c713790ec25a4d0807f8&=&format=webp&quality=lossless&width=62&height=39">
-            <img class = "i2" src = "https://media.discordapp.net/attachments/1196163965110202440/1199068431216033852/image.png?ex=65c1327f&is=65aebd7f&hm=2a798b8ba5a427687534964b77823da1c4b335a10a712c7e9f8f127042e78ce8&=&format=webp&quality=lossless&width=61&height=39">
+            <img class = "i1" src = "https://media.discordapp.net/attachments/1196163965110202440/1199068430238761030/image.png?ex=661440ff&is=6601cbff&hm=0d5b295b2a44d97f3a3f05a3eedbbbec6ead3119a8ce11a2904a7fc7e324fdb5&=&format=webp&quality=lossless">
+            <img class = "i2" src = "https://media.discordapp.net/attachments/1196163965110202440/1199068430519775302/image.png?ex=661440ff&is=6601cbff&hm=d7f184541855e55ed88f2c9cba58191acfa399d7a538045bb3b8bf90ff42c32b&=&format=webp&quality=lossless">
+            <img class = "i2" src = "https://media.discordapp.net/attachments/1196163965110202440/1199068430733672628/image.png?ex=661440ff&is=6601cbff&hm=39cba7c2002647ea087a6b75991c334609544e4f9470b70c7887b786fd75e5b5&=&format=webp&quality=lossless">
+            <img class = "i2" src = "https://media.discordapp.net/attachments/1196163965110202440/1199068430968573982/image.png?ex=661440ff&is=6601cbff&hm=565ec36b8e5fc27c3fb024cc64beaa4c6d8be01fe642b39cb0a98601401edef9&=&format=webp&quality=lossless">
+            <img class = "i2" src = "https://media.discordapp.net/attachments/1196163965110202440/1199068431216033852/image.png?ex=661440ff&is=6601cbff&hm=31274ef66419769da9c592adfab2f61fd8792ef2daf8f61d73d1a474f6a3f646&=&format=webp&quality=lossless">
             <a class="hd5" >Created with ❤️ by BlazeNut</a>
         </div>
         <script>

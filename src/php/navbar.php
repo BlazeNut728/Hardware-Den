@@ -20,7 +20,7 @@
     <a href="#PRF"><i class="fa-brands fa-instagram" style="font-size:1.9vh; padding: 1vh; color: white;"></i></a>
     </div>
       <div class="topnav">
-        <img src="https://media.discordapp.net/attachments/1196163965110202440/1196761972146966578/HDO.png?ex=65b8ce70&is=65a65970&hm=4eb0287e5a682a30c2ef586498ff210fd3edfeb48ef27257fe1ae7133516b28c&=&format=webp&quality=lossless&width=660&height=700" class = "logo" alt="Logo">
+        <img src="https://media.discordapp.net/attachments/1196163965110202440/1196761972146966578/HDO.png?ex=66151770&is=6602a270&hm=4585e59806b9c1a250444f77da2ce7887506375ab43ce78f334182d5bc265086&=&format=webp&quality=lossless&width=330&height=350" class = "logo" alt="Logo">
         <a class="df" href="#LPT">Laptops</a>
         <a class="df" href="#DPC">Desktop PC's</a>
         <a class="df" href="#ND">Networking Devices</a>
@@ -36,7 +36,7 @@
           </form>
         </div>
         <a class="of" href="#CRT"><i class="fa badge fa-lg" value=8 style="font-size:1.9vh; padding: 1vh; margin-left: 2.25vh; margin-top: 3.3vh; color: black;">&#xf07a;</i></a>
-        <a class="of" href="customer_dashboard.php"><i class="fa-solid fa-user" value = <?php $items ?> style="font-size:1.9vh; padding: 1vh; margin-left: 2.25vh; margin-top: 2.4vh; color: black;"></i></a>
+        <a class="of" href="customer_dashboard.php"><i class="fa-solid fa-user" style="font-size:1.9vh; padding: 1vh; margin-left: 2.25vh; margin-top: 2.4vh; color: black;"></i></a>
 
         
           </i></a>      

@@ -273,6 +273,21 @@ body {
 
 }
 
+.hd5 {
+
+   display: flex;
+   font-size: 1.3vh;
+   font-family: 'Poppins', sans-serif;
+   font-weight: 400;
+   text-decoration: none;
+   color: White;
+   transition: all 0.5s ease-in-out;
+   line-height: 140%;
+   margin-top: 1.8vh;
+   margin-left: 19%;
+
+}
+
 .grid-container {
     display: grid;
     grid-template-columns: 49.0vh 27.2vh 30.5vh 27.2vh auto;
