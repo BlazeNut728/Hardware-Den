@@ -58,20 +58,17 @@ body {
    margin-bottom: 1.2vh;
 }
 
-.laptop-grid-wrapper {
+.grid-wrapper {
 
     display: grid;
-    grid-template-columns: 15.0vw auto;
-    column-gap: 1.0vw;
-    margin-left: 13.1vw;
+    grid-template-columns: 15.0vw 59.0vw;
+    margin-left: 12.4vw;
     
 }
 
-.laptop-filter-container {
-
-    border: #000;
-    border-style: solid;
-    padding: 5%;
+.filter-container {
+  
+  padding: 5%;
 
 }
 
@@ -96,7 +93,6 @@ body {
     line-height: normal;
     transition: all 0.5s ease-in-out;
     margin-bottom: 1.4vh;
-    margin-left: 1.5vh;
     padding-top: 0.5vw;
 
 }
@@ -107,7 +103,6 @@ body {
     width: 80%;
     height: 0.3vh;
     margin-top: 2.0vh;
-    margin-left: 3.0vh;
 }
 
   .checkbox-wrapper-2 .common_selector {
@@ -173,12 +168,101 @@ body {
   .checkbox-wrapper-2 .common_selector:checked:hover {
     background-color: #ff8400;
   }
+  
+
+.laptop-item {
+
+  display: grid;
+  grid-template-columns: auto auto auto;
+  column-gap: 2.0vw;
+  row-gap: 2.0vw;
+  align-items: center;
+  
+}
+
+.card {
+
+  width: auto;
+  height: auto;
+  cursor: pointer;
+}
+
+.card:hover {
+
+  background: rgba( 255, 255, 255, 0.25 );
+  box-shadow: 0 0.8vh 3.2vh 0 rgba(255, 136, 0, 0.911);
+  backdrop-filter: blur( 0.4vh );
+  -webkit-backdrop-filter: blur( 0.4vh );
+  border-radius: 2.0vh;
+  transition: all 0.5s ease-in-out;
+}
+
+.card-image {
+
+  display: block;
+  width: 20.0vh;
+  height: 20.0vh;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 1.0vw;
+}
+
+.card-title {
+
+  display: block;
+
+  font-family: Poppins;
+  font-size: 1.6vh;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  transition: all 0.5s ease-in-out;
+  text-align: center;
 
 
-  .laptop-container {
+}
 
-    border: #000;
-    border-style: solid;
-    padding: 5%;
+.card-text {
+
+  display: block;
+
+  font-family: Poppins;
+  font-size: 1.4vh;
+  font-weight: 400;
+  transition: all 0.5s ease-in-out;
+  text-align: center;
+  margin-top: 0.4vh;
+
+
+}
+
+.item-submit {
+
+  /* left: -77.3vh; */
+  font-size: 1.4vh;
+  font-family: 'Poppins', sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  border-radius: 5vh;
+  border: 0.4vh solid var(--Color---3, #ff8400);
+  -webkit-text-fill-color: #ff8400;
+  background-color: white;
+  text-decoration: none;
+
+  margin-top: 3.0vh;
+  margin-left: 22.5%;
+
+  padding-top: 0.4vh;
+  padding-bottom: 0.4vh;
+  padding-left: 1.5vh;
+  padding-right: 1.5vh;
+  width: 10.0vw;
+}
+
+.item-submit:hover {
+
+  -webkit-text-fill-color: #0156FF;
+  border-color: #0156FF;
+  transition-duration: 0.4s;
 
 }

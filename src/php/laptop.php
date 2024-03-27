@@ -17,13 +17,11 @@
     <div class= "ar">
         <a class ="hm" href="#home">Home</a> <a style = "color:#ff8400;"> > </a> <a class ="lg" href="laptop.php">Laptops</a>
     </div>
+    
+    <br>
 
-    <div class= "ar">
-        <a class="stc"> Laptops </a> <br>
-    </div> 
-
-    <div class = "laptop-grid-wrapper">
-        <div class = laptop-filter-container>
+    <div class = "grid-wrapper">
+        <div class = filter-container>
 
 
             <div class = "filter">
@@ -43,7 +41,7 @@
                 <div class = "filter-checkbox">
                     <label>
                         <div class="checkbox-wrapper-2">
-                            <input type = "checkbox" class = "common_selector category" value = "<?php echo $row['category']; ?>">
+                            <input type = "checkbox" class = "common_selector category" value = "<?php echo $row['category']; ?>" id = "category">
                             <?php echo $row['category']; ?>
                         </div>
                     </label>
@@ -74,7 +72,7 @@
                 <div class = "filter-checkbox">
                     <label>
                         <div class="checkbox-wrapper-2">
-                            <input type = "checkbox" class = "common_selector manufacturer" value = "<?php echo $row['manufacturer']; ?>">
+                            <input type = "checkbox" class = "common_selector manufacturer" value = "<?php echo $row['manufacturer']; ?>" id = "manufacturer">
                             <?php echo $row['manufacturer']; ?>
                         </div>
                     </label>
@@ -105,7 +103,7 @@
                 <div class = "filter-checkbox">
                     <label>
                         <div class="checkbox-wrapper-2">
-                            <input type = "checkbox" class = "common_selector cpu_brand" value = "<?php echo $row['cpu_brand']; ?>">
+                            <input type = "checkbox" class = "common_selector cpu_brand" value = "<?php echo $row['cpu_brand']; ?>" id = "cpu_brand">
                             <?php echo $row['cpu_brand']; ?>
                         </div>
                     </label>
@@ -136,7 +134,7 @@
                 <div class = "filter-checkbox">
                     <label>
                         <div class="checkbox-wrapper-2">
-                            <input type = "checkbox" class = "common_selector ram_size" value = "<?php echo $row['ram_size']; ?>">
+                            <input type = "checkbox" class = "common_selector ram_size" value = "<?php echo $row['ram_size']; ?>" id = "ram_size">
                             <?php echo $row['ram_size']; ?> GB
                         </div>
                     </label>
@@ -167,7 +165,7 @@
                 <div class = "filter-checkbox">
                     <label>
                         <div class="checkbox-wrapper-2">
-                            <input type = "checkbox" class = "common_selector storage_size" value = "<?php echo $row['storage_size']; ?>">
+                            <input type = "checkbox" class = "common_selector storage_size" value = "<?php echo $row['storage_size']; ?>" id = "storage_size">
                             <?php echo $row['storage_size']; ?> GB
                         </div>
                     </label>
@@ -180,33 +178,38 @@
             </div>
             
         </div>
-            
-        </div>
 
         
 
-        <div class = laptop-container>
+        <div class = "laptop-item" id = "result">
 
-        <div class="card-container">
-            <?php
-            $query = "SELECT * FROM laptop";
-            $result = mysqli_query($conn, $query);
-            while ($row = mysqli_fetch_array($result, MYSQLI_ASSOC)) {
-                echo '
-                <div class="card">
-                <div class="card-body">
-                    <h5 class="card-title">' . $row["manufacturer"] . '  ' . $row["model_name"] . '</h5>
-                    <p class="card-text">' . $row["screen_size"] . '</p>
-                </div>
-                </div>
-                ';
-            }
-            ?>
+                <?php
+                include('data_conn.php');
+                $query = "SELECT * FROM laptop";
+                $result = mysqli_query($conn, $query);
+                while ($row = mysqli_fetch_array($result, MYSQLI_ASSOC)) 
+                {
+                ?>
+                    <div class="card">
+                        <div class="card-body">
+                            <img src = "<?php echo $row["images"] ?>" class="card-image"></img>
+                            <a class="card-title"> <?php echo $row["manufacturer"]  . '  ' . $row["model_name"] ?></a>
+                            <a class="card-text">Rs <?php echo $row["price"] ?></a>
+                            <form action="customer_login.php"  method="POST">
+                                <input type="submit" value="Add To Cart" class="item-submit">
+                            </form>
+                            <br>
+                        </div>
+                    </div>
+
+                <?php
+                }
+                ?>
             </div>
 
-        </div>
-
     </div>
+
+    <script src = "../js/filter.js"></script>
 
     <footer>
         <br><br>
