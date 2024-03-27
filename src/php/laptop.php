@@ -195,7 +195,7 @@
                             <img src = "<?php echo $row["images"] ?>" class="card-image"></img>
                             <a class="card-title"> <?php echo $row["manufacturer"]  . '  ' . $row["model_name"] ?></a>
                             <a class="card-text">Rs <?php echo $row["price"] ?></a>
-                            <form action="customer_login.php"  method="POST">
+                            <form action="cart.php"  method="POST">
                                 <input type="submit" value="Add To Cart" class="item-submit">
                             </form>
                             <br>

@@ -89,6 +89,13 @@ body {
 
 }
 
+.df:hover {
+ 
+    -webkit-text-fill-color: #ff8400;
+    transition-duration: 0.2s;
+
+}
+
 .od {
 
     display: inline-flex;
