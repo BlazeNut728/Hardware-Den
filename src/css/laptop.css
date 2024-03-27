@@ -61,7 +61,7 @@ body {
 .grid-wrapper {
 
     display: grid;
-    grid-template-columns: 15.0vw 59.0vw;
+    grid-template-columns: 15.0vw 57.0vw;
     margin-left: 12.4vw;
     
 }
@@ -173,18 +173,23 @@ body {
 .laptop-item {
 
   display: grid;
-  grid-template-columns: auto auto auto;
-  column-gap: 2.0vw;
-  row-gap: 2.0vw;
+  grid-template-columns: 19.0vw 19.0vw 19.0vw;
+  column-gap: 1.0vw;
+  row-gap: 1.0vw;
   align-items: center;
   
 }
 
 .card {
 
+  display: block;
   width: auto;
   height: auto;
   cursor: pointer;
+  max-height: 25.0vh;
+  transition: max-height 2s ease-in-out;
+  transition: all 1s ease-in-out;
+  overflow: hidden;
 }
 
 .card:hover {
@@ -194,7 +199,8 @@ body {
   backdrop-filter: blur( 0.4vh );
   -webkit-backdrop-filter: blur( 0.4vh );
   border-radius: 2.0vh;
-  transition: all 0.5s ease-in-out;
+  transition: all 2s ease-in-out;
+  max-height: 100.0vh;
 }
 
 .card-image {
@@ -231,7 +237,16 @@ body {
   font-weight: 400;
   transition: all 0.5s ease-in-out;
   text-align: center;
-  margin-top: 0.4vh;
+  margin-top: 0.8vh;
+
+
+}
+
+.card:hover .card-text {
+
+  font-size: 1.6vh;
+  font-weight: 600;
+  transition: all 0.8s ease-in-out;
 
 
 }
@@ -249,7 +264,7 @@ body {
   background-color: white;
   text-decoration: none;
 
-  margin-top: 3.0vh;
+  margin-top: 1.0vh;
   margin-left: 22.5%;
 
   padding-top: 0.4vh;
@@ -263,6 +278,23 @@ body {
 
   -webkit-text-fill-color: #0156FF;
   border-color: #0156FF;
-  transition-duration: 0.4s;
+  transition-duration: 0.5s;
 
+}
+
+.card-specs {
+
+  font-family: Poppins;
+  font-size: 1.4vh;
+  font-weight: 400;
+  text-align: center;
+}
+
+.card:hover .card-specs {
+
+  display: block;
+}
+
+.card-height-animate {
+  height: 100.0vh; 
 }
