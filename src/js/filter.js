@@ -10,6 +10,7 @@ $(document).ready(function(){
         var category = get_filter('category');
         var manufacturer = get_filter('manufacturer');
         var cpu_brand = get_filter('cpu_brand');
+        var gpu_brand = get_filter('gpu_brand');
         var ram_size = get_filter('ram_size');
         var storage_size = get_filter('storage_size');
         var page_name = pageName;
@@ -17,7 +18,7 @@ $(document).ready(function(){
         $.ajax({
             url:"fetch_data.php?page_name=" + page_name,
             method:"POST",
-            data:{action:action, category:category, manufacturer:manufacturer, cpu_brand:cpu_brand, ram_size:ram_size, storage_size:storage_size, page_name: page_name},
+            data:{action:action, category:category, manufacturer:manufacturer, cpu_brand:cpu_brand, gpu_brand:gpu_brand, ram_size:ram_size, storage_size:storage_size, page_name: page_name},
             success:function(data){
                 $('.item').html(data);
             }

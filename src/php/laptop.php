@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="../css/laptop.css">
+    <link rel="stylesheet" type="text/css" href="../css/items.css">
     <link rel="icon" type="images/x-icon" href="../../images/favicon.ico" />
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <script src="https://kit.fontawesome.com/6e301e326d.js" crossorigin="anonymous"></script>
@@ -105,6 +105,37 @@
                         <div class="checkbox-wrapper-2">
                             <input type = "checkbox" class = "common_selector cpu_brand" value = "<?php echo $row['cpu_brand']; ?>" id = "cpu_brand">
                             <?php echo $row['cpu_brand']; ?>
+                        </div>
+                    </label>
+                </div>
+
+                <?php 
+                }
+                ?>
+
+            </div>
+
+            <div class="divider"></div><br>
+
+            <div class = "filter">
+
+                <a class ="filter-heading">Sort By GPU</a>
+
+                <?php
+                include('data_conn.php');
+                $sql = "SELECT DISTINCT (gpu_brand) FROM laptop ORDER BY gpu_brand ASC ";
+                $result = mysqli_query($conn, $sql);
+                $row = mysqli_fetch_array($result, MYSQLI_ASSOC);
+
+                foreach($result as $row)
+                {
+                ?>
+
+                <div class = "filter-checkbox">
+                    <label>
+                        <div class="checkbox-wrapper-2">
+                            <input type = "checkbox" class = "common_selector gpu_brand" value = "<?php echo $row['gpu_brand']; ?>" id = "gpu_brand">
+                            <?php echo $row['gpu_brand']; ?>
                         </div>
                     </label>
                 </div>
