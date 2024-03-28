@@ -170,7 +170,7 @@ body {
   }
   
 
-.laptop-item {
+.item {
 
   display: grid;
   grid-template-columns: 19.0vw 19.0vw 19.0vw;

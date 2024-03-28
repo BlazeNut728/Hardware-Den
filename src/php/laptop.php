@@ -181,9 +181,16 @@
 
         
 
-        <div class = "laptop-item" id = "result">
+        <div class = "item" id = "result">
 
         </div>
+
+    <?php
+        $pageName = "Laptop";
+    ?>
+    <script>
+        var pageName = "<?php echo $pageName; ?>";
+    </script>
 
     </div>
     <script src = "../js/filter.js"></script>

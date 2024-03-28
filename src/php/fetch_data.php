@@ -4,68 +4,72 @@ error_reporting(0);
 
 if(isset($_POST["action"]))
 {
-    $sql = "SELECT * FROM laptop WHERE 1"; // Base query to fetch all data
-
-    // Check if any filter is selected
-    if(isset($_POST["category"]))
+    if($_POST["page_name"] == 'Laptop')
     {
-        $category_filter = implode("','", $_POST["category"]);
-        $sql .= " AND category IN('".$category_filter."')";
-    }
+        $sql = "SELECT * FROM laptop WHERE 1"; // Base query to fetch all data
 
-    if(isset($_POST["manufacturer"]))
-    {
-        $manufacturer_filter = implode("','", $_POST["manufacturer"]);
-        $sql .= " AND manufacturer IN('".$manufacturer_filter."')";
-    }
-
-    if(isset($_POST["cpu_brand"]))
-    {
-        $cpu_brand_filter = implode("','", $_POST["cpu_brand"]);
-        $sql .= " AND cpu_brand IN('".$cpu_brand_filter."')";
-    }
-
-    if(isset($_POST["ram_size"]))
-    {
-        $ram_size_filter = implode("','", $_POST["ram_size"]);
-        $sql .= " AND ram_size IN('".$ram_size_filter."')";
-    }
-
-    if(isset($_POST["storage_size"]))
-    {
-        $storage_size_filter = implode("','", $_POST["storage_size"]);
-        $sql .= " AND storage_size IN('".$storage_size_filter."')";
-    }
-
-    $result = mysqli_query($conn, $sql);
-
-    if(mysqli_num_rows($result) > 0)
-    {
-        while($row = mysqli_fetch_array($result))
+        
+        if(isset($_POST["category"]))
         {
-            // Output data, you can structure this as needed
-            echo'<div class="card" id="modal">'.
-                '<a href="details.php?id='.$row["laptop_id"].'" class="card-link">'. 
-                 '<div class="card-body">'.
-                 '<img src="'.$row["images"].'" class="card-image">'.
-                 '<a class="card-title">'.$row["manufacturer"].' '.$row["model_name"].'</a><br>'.
-                 '<div class="card-specs">'.
-                 'Specifications'.
-                 '<br>'.
-                 'Processor: '.$row["cpu_brand"].' '.$row["cpu_series"].' '.$row["cpu_name"].'<br>'.
-                 'Graphics: '.$row["gpu_brand"].' '.$row["gpu_series"].'<br>'.
-                 'VRAM: '.$row["vram"].' MB<br>'.
-                 'RAM: '.$row["ram_size"].' GB | '.$row["ram_speed"].' MHz<br>'.
-                 'Storage: '.$row["storage_type"].' | '.$row["storage_size"].' GB<br>'.
-                 '</div>'.
-                 '<a class="card-text">Rs '.$row["price"].'</a>'.
-                 '<form action="cart.php" method="POST">'.
-                 '<input type="submit" value="Add To Cart" class="item-submit">'.
-                 '</form>'.
-                 '<br>'.
-                 '</div>'.
-                 '</div>';
+            $category_filter = implode("','", $_POST["category"]);
+            $sql .= " AND category IN('".$category_filter."')";
         }
+
+        if(isset($_POST["manufacturer"]))
+        {
+            $manufacturer_filter = implode("','", $_POST["manufacturer"]);
+            $sql .= " AND manufacturer IN('".$manufacturer_filter."')";
+        }
+
+        if(isset($_POST["cpu_brand"]))
+        {
+            $cpu_brand_filter = implode("','", $_POST["cpu_brand"]);
+            $sql .= " AND cpu_brand IN('".$cpu_brand_filter."')";
+        }
+
+        if(isset($_POST["ram_size"]))
+        {
+            $ram_size_filter = implode("','", $_POST["ram_size"]);
+            $sql .= " AND ram_size IN('".$ram_size_filter."')";
+        }
+
+        if(isset($_POST["storage_size"]))
+        {
+            $storage_size_filter = implode("','", $_POST["storage_size"]);
+            $sql .= " AND storage_size IN('".$storage_size_filter."')";
+        }
+
+        $result = mysqli_query($conn, $sql);
+
+        if(mysqli_num_rows($result) > 0)
+        {
+            while($row = mysqli_fetch_array($result))
+            {
+                // Output data, you can structure this as needed
+                echo'<div class="card" id="modal">'.
+                    '<a href="details.php?id='.$row["laptop_id"].'" class="card-link">'. 
+                    '<div class="card-body">'.
+                    '<img src="'.$row["images"].'" class="card-image">'.
+                    '<a class="card-title">'.$row["manufacturer"].' '.$row["model_name"].'</a><br>'.
+                    '<div class="card-specs">'.
+                    'Specifications'.
+                    '<br>'.
+                    'Processor: '.$row["cpu_brand"].' '.$row["cpu_series"].' '.$row["cpu_name"].'<br>'.
+                    'Graphics: '.$row["gpu_brand"].' '.$row["gpu_series"].'<br>'.
+                    'VRAM: '.$row["vram"].' MB<br>'.
+                    'RAM: '.$row["ram_size"].' GB | '.$row["ram_speed"].' MHz<br>'.
+                    'Storage: '.$row["storage_type"].' | '.$row["storage_size"].' GB<br>'.
+                    '</div>'.
+                    '<a class="card-text">Rs '.$row["price"].'</a>'.
+                    '<form action="cart.php" method="POST">'.
+                    '<input type="submit" value="Add To Cart" class="item-submit">'.
+                    '</form>'.
+                    '<br>'.
+                    '</div>'.
+                    '</div>';
+            }
+        }
+
     }
     else
     {
