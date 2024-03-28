@@ -44,18 +44,30 @@ if(isset($_POST["action"]))
         while($row = mysqli_fetch_array($result))
         {
             // Output data, you can structure this as needed
-            echo '<div class="laptop">'.
-                 '<h2>'.$row["name"].'</h2>'.
-                 '<p>Category: '.$row["category"].'</p>'.
-                 '<p>Manufacturer: '.$row["manufacturer"].'</p>'.
-                 '<p>CPU Brand: '.$row["cpu_brand"].'</p>'.
-                 '<p>RAM Size: '.$row["ram_size"].' GB</p>'.
-                 '<p>Storage Size: '.$row["storage_size"].' GB</p>'.
+            echo '<div class="card" id="modal">'.
+                 '<div class="card-body">'.
+                 '<img src="'.$row["images"].'" class="card-image">'.
+                 '<a class="card-title">'.$row["manufacturer"].' '.$row["model_name"].'</a><br>'.
+                 '<div class="card-specs">'.
+                 'Specifications'.
+                 '<br>'.
+                 'Processor: '.$row["cpu_brand"].' '.$row["cpu_series"].' '.$row["cpu_name"].'<br>'.
+                 'Graphics: '.$row["gpu_brand"].' '.$row["gpu_series"].'<br>'.
+                 'VRAM: '.$row["vram"].' MB<br>'.
+                 'RAM: '.$row["ram_size"].' GB | '.$row["ram_speed"].' MHz<br>'.
+                 'Storage: '.$row["storage_type"].' | '.$row["storage_size"].' GB<br>'.
+                 '</div>'.
+                 '<a class="card-text">Rs '.$row["price"].'</a>'.
+                 '<form action="cart.php" method="POST">'.
+                 '<input type="submit" value="Add To Cart" class="item-submit">'.
+                 '</form>'.
+                 '<br>'.
+                 '</div>'.
                  '</div>';
         }
     }
     else
     {
-        echo '<div>No data found</div>';
+        echo '<div style = "font-family: Poppins; font-size: 2.6vh; font-style: normal; font-weight: 600; color:#ff8400; padding: 2.0vw; margin-left: 2.0vw;" >No Matches Found</div>';
     }
 }
