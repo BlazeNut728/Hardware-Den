@@ -232,7 +232,7 @@ body {
 
 .expandright {
 	left: auto;
-	right: 1.0vh; /* Button width-1px */
+	right: 2.0vh; /* Button width-1px */
 }
 
 .expandright:focus {

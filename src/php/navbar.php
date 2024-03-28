@@ -30,8 +30,8 @@
         <a class="df" href="#RP">Repairs</a>
         <a class="od" href="#OD">Our Deals</a>
         <div class="search-container">
-          <form action="/search" method="post">
-            <input class="search expandright" id="searchright" type="search" name="q" placeholder="Search">
+          <form action="navbar.php" method="post">
+            <input class="search expandright" id="searchright" type="search" name="" placeholder="Search">
             <label class="button searchbutton" for="searchright"><span class="mglass">&#9906;</span></label>
           </form>
         </div>
