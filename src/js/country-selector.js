@@ -2,9 +2,7 @@
 var user_country_code = "IN";
 
 (() => {
-    // script https://www.html-code-generator.com/html/drop-down/state-name
-
-    // Get the country name and state name from the imported script.
+    
     const country_array = country_and_states.country;
     const states_array = country_and_states.states;
 
