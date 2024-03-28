@@ -183,42 +183,11 @@
 
         <div class = "laptop-item" id = "result">
 
-            <?php
-            include('data_conn.php');
-            $query = "SELECT * FROM laptop";
-            $result = mysqli_query($conn, $query);
-            while ($row = mysqli_fetch_array($result, MYSQLI_ASSOC)) 
-            {
-            ?>
-                <div class="card" id = "modal">
-                    <div class="card-body">
-                        <img src = "<?php echo $row["images"] ?>" class="card-image"></img>
-                        <a class="card-title"> <?php echo $row["manufacturer"]  . '  ' . $row["model_name"] ?></a><br>
-
-                        <div class="card-specs">
-                            Specifications
-                            <br>
-                            Processor : <?php echo $row["cpu_brand"] . ' ' . $row["cpu_series"] . ' ' . $row["cpu_name"] ?> <br>
-                            Graphics : <?php echo $row["gpu_brand"] . ' ' . $row["gpu_series"] ?> <br>
-                            VRAM: <?php echo $row["vram"] . ' MB' ?> <br>
-                            RAM: <?php echo $row["ram_size"] . ' GB | ' . $row["ram_speed"] . ' MHz' ?> <br>
-                            Storage: <?php echo $row["storage_type"] . ' | ' . $row["storage_size"] . ' GB' ?> <br>
-
-                        </div>
-                        <a class="card-text">Rs <?php echo $row["price"] ?></a>
-                        <form action="cart.php"  method="POST">
-                            <input type="submit" value="Add To Cart" class="item-submit">
-                        </form>
-                        <br>
-                    </div>
-                </div>
-            <?php
-            }
-            ?>
         </div>
 
     </div>
     <script src = "../js/filter.js"></script>
+    <script src = "../js/redirect.js"></script>
 
     <footer>
         <br><br>

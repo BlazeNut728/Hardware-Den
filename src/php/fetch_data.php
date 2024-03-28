@@ -44,7 +44,8 @@ if(isset($_POST["action"]))
         while($row = mysqli_fetch_array($result))
         {
             // Output data, you can structure this as needed
-            echo '<div class="card" id="modal">'.
+            echo'<div class="card" id="modal">'.
+                '<a href="details.php?id='.$row["laptop_id"].'" class="card-link">'. 
                  '<div class="card-body">'.
                  '<img src="'.$row["images"].'" class="card-image">'.
                  '<a class="card-title">'.$row["manufacturer"].' '.$row["model_name"].'</a><br>'.
