@@ -1,2 +1,2 @@
 # Hardware Den
- All Inclusive PC Store with built-in Logistic Panel
+ All Inclusive PC Store with built-in Administration Panel
