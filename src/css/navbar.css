@@ -226,7 +226,7 @@ body {
 }
 
 .search:focus {
-	width: 120.0vh; /* Bar width+1px */
+	width: 60.0vw; /* Bar width+1px */
 	padding: 0 1.6vh 0 0;
 }
 

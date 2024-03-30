@@ -22,7 +22,7 @@
       <div class="topnav">
         <img src="https://media.discordapp.net/attachments/1196163965110202440/1196761972146966578/HDO.png?ex=66151770&is=6602a270&hm=4585e59806b9c1a250444f77da2ce7887506375ab43ce78f334182d5bc265086&=&format=webp&quality=lossless&width=330&height=350" class = "logo" alt="Logo">
         <a class="df" href="laptop.php">Laptops</a>
-        <a class="df" href="#DPC">Desktop PC's</a>
+        <a class="df" href="#pc.php">Desktop PC's</a>
         <a class="df" href="#ND">Networking Devices</a>
         <a class="df" href="#PS">Printers & Scanners</a>
         <a class="df" href="#PCP">PC Parts</a>
@@ -30,14 +30,13 @@
         <a class="df" href="#RP">Repairs</a>
         <a class="od" href="#OD">Our Deals</a>
         <div class="search-container">
-          <form action="navbar.php" method="post">
-            <input class="search expandright" id="searchright" type="search" name="" placeholder="Search">
-            <label class="button searchbutton" for="searchright"><span class="mglass">&#9906;</span></label>
-          </form>
+        <form action="fetch_data.php" method="post">
+          <input class="search expandright" id="searchright" type="search" name="search_query" placeholder="Search">
+          <label class="button searchbutton" for="searchright"><span class="mglass">&#9906;</span></label>
+      </form>
         </div>
         <a class="of" href="#CRT"><i class="fa badge fa-lg" value=8 style="font-size:1.9vh; padding: 1vh; margin-left: 2.25vh; margin-top: 3.3vh; color: black;">&#xf07a;</i></a>
         <a class="of" href="customer_dashboard.php"><i class="fa-solid fa-user" style="font-size:1.9vh; padding: 1vh; margin-left: 2.25vh; margin-top: 2.4vh; color: black;"></i></a>
-
         
           </i></a>      
           </div>
