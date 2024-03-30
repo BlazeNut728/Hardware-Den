@@ -1,0 +1,271 @@
+body {
+    margin: 0;
+    padding: 0;
+    overflow: scroll;
+ }
+
+ .ar {
+    font-family: Poppins;
+    font-size: 1.4vh;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    transition: all 0.5s ease-in-out;
+    margin-left: 13.1vw;
+    margin-top: 2.1vh;
+    margin-bottom: 0.5vh;
+
+ }
+
+ .hm {
+
+   color: #000;
+   text-decoration: none;
+
+ }
+
+ .hm:hover {
+
+   color: #ff8400;
+   text-decoration: none;
+   transition: all 0.2s ease-in-out;
+
+ }
+
+ .lg {
+
+   color: #000;
+   text-decoration: none;
+   
+}
+
+.lg:hover {
+
+   color: #ff8400;
+   text-decoration: none;
+   transition: all 0.2s ease-in-out;
+
+ }
+
+.stc {
+
+   color: #000; 
+   font-family: Poppins; 
+   font-size: 1.8vw; 
+   font-style: normal; 
+   font-weight: 600; 
+   line-height: normal; 
+   margin-bottom: 1.2vh;
+}
+
+.gtc {
+
+   color: #000; 
+   font-family: Poppins; 
+   font-size: 1.2vw; 
+   font-style: normal; 
+   font-weight: 600; 
+   line-height: normal; 
+   margin-left: 13.1vw;
+   margin-top: 2.4vh;
+
+}
+
+
+.detail-grid-container {
+  display: grid;
+  grid-template-columns: 47% auto;
+  column-gap: 0.4vh;
+  background-color: #000;
+}
+
+.detail-grid-item {
+  padding: 2.0vh;
+  text-align: left;
+  background-color: white;
+  z-index: 1;
+}
+
+
+.carousel {
+    width: 36.0vw;
+    height: 30.0vw;
+    position: relative;
+    margin-left: 8.1vw;
+  }
+  
+  .carousel-inner {
+    width: 30.0vw;
+    height: 30.0vw;
+    display: flex;
+    transition: transform 0.5s;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .carousel-item {
+    max-width: 30.0vw;
+    max-height: 30.0vw;
+    background-size: contain;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.2s;
+  }
+  
+  .carousel-item.active {
+    opacity: 1;
+  }
+  
+  .carousel-control-prev,
+  .carousel-control-next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 5.0vh;
+    height: 5.0vh;
+    color: #000;
+    border: none;
+    font-size: 4.4vh;
+    cursor: pointer;
+    background-color: transparent;
+    transition: background-color 0.5s;
+  }
+  
+  .carousel-control-prev:hover,
+  .carousel-control-next:hover {
+    color: #ff8400;
+  }
+  
+  .carousel-control-prev {
+    left: 0;
+  }
+  
+  .carousel-control-next {
+    right: 0;
+  }
+
+.detail-title {
+
+  color: #000; 
+  font-family: Poppins; 
+  font-size: 1.8vw;  
+  font-weight: 600;
+
+}
+
+.detail-price {
+
+  color: #000; 
+  font-family: Poppins; 
+  font-size: 1.6vw;  
+  font-weight: 400;
+
+}
+
+.divider {
+
+  background-color: #000;
+  width: 80%;
+  height: 0.3vh;
+  margin-top: 0.75vh;
+}
+
+.detail-spec-heading {
+
+  color: #000; 
+  font-family: Poppins; 
+  font-size: 1.4vw;  
+  font-weight: 600;
+
+}
+
+.detail-spec-desc {
+
+  color: #000; 
+  font-family: Poppins; 
+  font-size: 0.8vw;  
+  font-weight: 400;
+
+}
+
+.fa-solid {
+
+  padding: 1.0vh;
+  font-size: 3.2vh;
+  border-radius: 2.0vh;
+  transition: all 0.5s ease-in-out;
+}
+
+.icon-container {
+
+  margin-top: 3.0vh;
+  margin-left: 1.0vh;
+  margin-bottom: 0.6vh;
+
+  width: 27.0vw;
+  padding: 1.0vh;
+
+  display: grid;
+  grid-template-columns: 13.0vh 13.0vh 13.0vh 13.0vh;
+
+  border-radius: 2.0vh;
+  border: 0.4vh #000 solid;
+  
+}
+
+.icon-box {
+
+  width: auto;
+  height: auto;
+  color: #000; 
+  font-family: Poppins; 
+  font-size: 0.8vw;  
+  font-weight: 600;
+  text-align: center;
+
+}
+
+.desc-grid-container {
+
+  display: grid;
+  grid-template-rows: auto auto;
+
+}
+
+.detail-grid-item {
+  padding: 2.0vh;
+  text-align: left;
+}
+
+.item-submit {
+
+  /* left: -77.3vh; */
+  font-size: 0.7vw;
+  font-family: 'Poppins', sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  border-radius: 5vh;
+  border: 0.2vw solid var(--Color---3, #ff8400);
+  -webkit-text-fill-color: #ff8400;
+  background-color: white;
+  text-decoration: none;
+
+  margin-left: 5%;
+
+  padding-top: 0.4vh;
+  padding-bottom: 0.4vh;
+  padding-left: 1.5vh;
+  padding-right: 1.5vh;
+  width: 8.0vw;
+}
+
+.item-submit:hover {
+
+  -webkit-text-fill-color: #0156FF;
+  border-color: #0156FF;
+  transition-duration: 0.5s;
+
+}

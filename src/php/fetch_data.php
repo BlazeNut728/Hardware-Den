@@ -1,5 +1,5 @@
 <?php
-include('data_conn.php'); // Include your database connection file
+include('data_conn.php');
 error_reporting(0);
 
 if(isset($_POST["action"]))
@@ -51,11 +51,11 @@ if(isset($_POST["action"]))
         {
             while($row = mysqli_fetch_array($result))
             {
-                // Output data, you can structure this as needed
+                
                 echo'<div class="card" id="modal">'.
                     '<a href="details.php?id='.$row["laptop_id"].'" class="card-link">'. 
                     '<div class="card-body">'.
-                    '<img src="'.$row["images"].'" class="card-image">'.
+                    '<img src="'.$row["display_image"].'" class="card-image">'.
                     '<a class="card-title">'.$row["manufacturer"].' '.$row["model_name"].'</a><br>'.
                     '<div class="card-specs">'.
                     'Specifications'.
@@ -79,7 +79,7 @@ if(isset($_POST["action"]))
     }
     if($_POST["page_name"] == 'PC')
     {
-        $sql = "SELECT * FROM pc WHERE 1"; // Base query to fetch all data
+        $sql = "SELECT * FROM pc WHERE 1";
 
         
         if(isset($_POST["category"]))
@@ -124,7 +124,7 @@ if(isset($_POST["action"]))
         {
             while($row = mysqli_fetch_array($result))
             {
-                // Output data, you can structure this as needed
+                
                 echo'<div class="card" id="modal">'.
                     '<a href="details.php?id='.$row["pc_id"].'" class="card-link">'. 
                     '<div class="card-body">'.
