@@ -75,7 +75,7 @@ body {
 .detail-grid-container {
   display: grid;
   grid-template-columns: 47% auto;
-  column-gap: 0.4vh;
+  column-gap: 0.3vh;
   background-color: #000;
 }
 

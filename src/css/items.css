@@ -206,7 +206,7 @@ body {
 
   display: block;
   width: 20.0vh;
-  height: 20.0vh;
+  max-height: 20.0vh;
   margin-left: auto;
   margin-right: auto;
   margin-top: 1.0vw;
