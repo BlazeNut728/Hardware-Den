@@ -15,253 +15,268 @@
     <title>Hardware Den</title>
 </head>
 <?php
-include('data_conn.php');
-session_start();
+    include('data_conn.php');
+    session_start();
 
-if (isset($_COOKIE["user"])) {
+    if (isset($_COOKIE["user"])) {
 
-    $cookie_user = $_COOKIE["user"];
+        $cookie_user = $_COOKIE["user"];
 
-    $sql = "SELECT * FROM `login_credential` where user = '$cookie_user'";
-    $r1 = mysqli_query($conn, $sql);
-    $row = mysqli_fetch_array($r1, MYSQLI_ASSOC);
+        $sql = "SELECT * FROM `login_credential` where user = '$cookie_user'";
+        $r1 = mysqli_query($conn, $sql);
+        $row = mysqli_fetch_array($r1, MYSQLI_ASSOC);
 
-    $email = $row["email"];
-    $name  = $row["name"];
-    $ba = $row["billing_address"];
-    $sa = $row["shipping_address"];
-    $msg = '';
-    $status = '';
-    $id = $row["id"];
+        $email = $row["email"];
+        $name  = $row["name"];
+        $ba = $row["billing_address"];
+        $sa = $row["shipping_address"];
+        $msg = '';
+        $status = '';
+        $id = $row["id"];
 
 
-    if (empty($ba)) {
+        if (empty($ba)) {
 
-        $ba = "You have not set a billing address";
-    }
-
-    if (empty($sa)) {
-
-        $sa = "You have not set a shipping address";
-    }
-
-    $newsletter = "SELECT status FROM `newsletter` where email = '$email'";
-    $r2 = mysqli_query($conn, $newsletter);
-    $nw = mysqli_fetch_array($r2, MYSQLI_ASSOC);
-    $nw_status = $nw["status"];
-
-    if ($nw_status == '1') {
-
-        $status = "You Have Subscribed to Our Newsletter";
-    } else {
-
-        $status = "You Have Not Subscribed to Our Newsletter";
-    }
-
-    if (isset($_POST['cd-checkbox'])) {
-        $nw_change = $_POST["cd-checkbox"];
-
-        if ($nw_change == 'Yes') {
-
-            if ($nw_status == '1') {
-
-                $nw_statuschange = "UPDATE `newsletter` SET status ='0' WHERE email = '$email'";
-                $nw_update = mysqli_query($conn, $nw_statuschange);
-                header ('Location: customer_dashboard.php');
-            } if ($nw_status == '0') {
-
-                $nw_statuschange = "UPDATE `newsletter` SET status ='1' WHERE email = '$email'";
-                $nw_update = mysqli_query($conn, $nw_statuschange);
-                header ('Location: customer_dashboard.php');
-            }
+            $ba = "You have not set a billing address";
         }
-    }
 
-    if (isset($_POST['cd-pass'])) {
-        $pass = $_POST["cd-pass"];
-        $np_pass = $_POST["np-pass"];
-        $cnp_pass = $_POST["cnp-pass"];
+        if (empty($sa)) {
 
-        if ($pass == $row["pass"] && $np_pass != $row["pass"] && $np_pass == $cnp_pass) {
+            $sa = "You have not set a shipping address";
+        }
 
-            $changepass = "UPDATE `login_credential` SET pass ='$np_pass' WHERE id = '$id'";
-            $pass_update = mysqli_query($conn, $changepass);
-            header ('Location: customer_dashboard.php');
-        } else if ($pass != $row["pass"] && $np_pass == $cnp_pass) {
+        $newsletter = "SELECT status FROM `newsletter` where email = '$email'";
+        $r2 = mysqli_query($conn, $newsletter);
+        $nw = mysqli_fetch_array($r2, MYSQLI_ASSOC);
+        $nw_status = $nw["status"];
 
-            $msg = "Incorrect Password";
-        } else if ($np_pass == $row["pass"]) {
+        if ($nw_status == '1') {
 
-            $msg = "Old Password & New Password Cannot Be Same";
+            $status = "You Have Subscribed to Our Newsletter";
         } else {
 
-            $msg = "New Password & Confirmed Password do not match";
+            $status = "You Have Not Subscribed to Our Newsletter";
         }
+
+        if (isset($_POST['cd-checkbox'])) {
+            $nw_change = $_POST["cd-checkbox"];
+
+            if ($nw_change == 'Yes') {
+
+                if ($nw_status == '1') {
+
+                    $nw_statuschange = "UPDATE `newsletter` SET status ='0' WHERE email = '$email'";
+                    $nw_update = mysqli_query($conn, $nw_statuschange);
+                    header ('Location: customer_dashboard.php');
+                } if ($nw_status == '0') {
+
+                    $nw_statuschange = "UPDATE `newsletter` SET status ='1' WHERE email = '$email'";
+                    $nw_update = mysqli_query($conn, $nw_statuschange);
+                    header ('Location: customer_dashboard.php');
+                }
+            }
+        }
+
+        if (isset($_POST['cd-pass'])) {
+            $pass = $_POST["cd-pass"];
+            $np_pass = $_POST["np-pass"];
+            $cnp_pass = $_POST["cnp-pass"];
+
+            if ($pass == $row["pass"] && $np_pass != $row["pass"] && $np_pass == $cnp_pass) {
+
+                $changepass = "UPDATE `login_credential` SET pass ='$np_pass' WHERE id = '$id'";
+                $pass_update = mysqli_query($conn, $changepass);
+                header ('Location: customer_dashboard.php');
+            } else if ($pass != $row["pass"] && $np_pass == $cnp_pass) {
+
+                $msg = "Incorrect Password";
+            } else if ($np_pass == $row["pass"]) {
+
+                $msg = "Old Password & New Password Cannot Be Same";
+            } else {
+
+                $msg = "New Password & Confirmed Password do not match";
+            }
+        }
+
+        if (isset($_POST['cd-user']) or isset($_POST['cd-name']) or isset($_POST['cd-email']) or isset($_POST['cd-number'])) {
+
+            $cd_user = $_POST["cd-user"];
+            $cd_name = $_POST["cd-name"];
+            $cd_email = $_POST["cd-email"];
+            $cd_number = $_POST["cd-number"];
+
+            $cd_user = mysqli_real_escape_string($conn, $cd_user);
+            $cd_name = mysqli_real_escape_string($conn, $cd_name);
+            $cd_email = mysqli_real_escape_string($conn, $cd_email);
+            $cd_number = mysqli_real_escape_string($conn, $cd_number);
+
+            if(!empty($cd_user)) {
+
+                $changedetail = "UPDATE `login_credential` SET user ='$cd_user' WHERE id = '$id'";
+                $cd_update = mysqli_query($conn, $changedetail);
+                $cookie_name = "user";
+                $cookie_value = $row["user"];
+                setcookie($cookie_name, $cookie_value, time() + (86400 * 30), "/"); // 86400 = 1 day
+                header ('Location: customer_login.php');
+            }
+            if(!empty($cd_name)) {
+
+                $changedetail = "UPDATE `login_credential` SET name = '$cd_name' WHERE id = '$id'";
+                $cd_update = mysqli_query($conn, $changedetail);
+                header ('Location: customer_dashboard.php');
+            }
+            if(!empty($cd_email)) {
+
+                $changedetail = "UPDATE `login_credential` SET email ='$cd_email' WHERE id = '$id'";
+                $cd_update = mysqli_query($conn, $changedetail);
+                header ('Location: customer_dashboard.php');
+            }
+            if(!empty($cd_number)) {
+
+                $changedetail = "UPDATE `login_credential` SET phone_number ='$cd_number' WHERE id = '$id'";
+                $cd_update = mysqli_query($conn, $changedetail);
+                header ('Location: customer_dashboard.php');
+            }
+        } 
+
+        if (isset($_POST['cd-ba']) or isset($_POST['ba-country']) or isset($_POST['ba-state']) or isset($_POST['ba-city']) or isset($_POST['ba-pincode'])) {
+
+            $cd_ba = $_POST["cd-ba"];
+            $ba_city = $_POST["ba-city"];
+            $ba_pincode = $_POST["ba-pincode"];
+            $country = $_POST["ba-country"];
+            $state = $_POST["ba-state"];
+
+            $cd_ba = mysqli_real_escape_string($conn, $cd_ba);
+            $country = mysqli_real_escape_string($conn, $country);
+            $state = mysqli_real_escape_string($conn, $state);
+
+            if(!empty($cd_ba)) {
+
+                $changedetail = "UPDATE `login_credential` SET billing_address ='$cd_ba' WHERE id = '$id'";
+                $cd_update = mysqli_query($conn, $changedetail);
+                header ('Location: customer_dashboard.php');
+
+            }
+
+            if(!empty($country)) {
+
+                $changedetail = "UPDATE `login_credential` SET ba_country ='$country' WHERE id = '$id'";
+                $cd_update = mysqli_query($conn, $changedetail);
+                header ('Location: customer_dashboard.php');
+
+            }
+
+            if(!empty($state)) {
+
+                $changedetail = "UPDATE `login_credential` SET ba_state ='$state' WHERE id = '$id'";
+                $cd_update = mysqli_query($conn, $changedetail);
+                header ('Location: customer_dashboard.php');
+
+            }
+
+            if(!empty($ba_city)) {
+
+                $changedetail = "UPDATE `login_credential` SET ba_city ='$ba_city' WHERE id = '$id'";
+                $cd_update = mysqli_query($conn, $changedetail);
+                header ('Location: customer_dashboard.php');
+
+            }
+
+            if(!empty($ba_pincode)) {
+
+                $changedetail = "UPDATE `login_credential` SET ba_pincode ='$ba_pincode' WHERE id = '$id'";
+                $cd_update = mysqli_query($conn, $changedetail);
+                header ('Location: customer_dashboard.php');
+
+            }
+
+        }
+        if (isset($_POST['cd-sa']) or isset($_POST['sa-country']) or isset($_POST['sa-state']) or isset($_POST['sa-city']) or isset($_POST['sa-pincode'])) {
+
+            $cd_sa = $_POST["cd-sa"];
+            $sa_city = $_POST["sa-city"];
+            $sa_pincode = $_POST["sa-pincode"];
+            $country = $_POST["sa-country"];
+            $state = $_POST["sa-state"];
+
+            $cd_ba = mysqli_real_escape_string($conn, $cd_ba);
+            $country = mysqli_real_escape_string($conn, $country);
+            $state = mysqli_real_escape_string($conn, $state);
+
+            if(!empty($cd_sa)) {
+
+                $changedetail = "UPDATE `login_credential` SET shipping_address ='$cd_sa' WHERE id = '$id'";
+                $cd_update = mysqli_query($conn, $changedetail);
+                header ('Location: customer_dashboard.php');
+
+            }
+
+            if(!empty($country)) {
+
+                $changedetail = "UPDATE `login_credential` SET sa_country ='$country' WHERE id = '$id'";
+                $cd_update = mysqli_query($conn, $changedetail);
+                header ('Location: customer_dashboard.php');
+
+            }
+
+            if(!empty($state)) {
+
+                $changedetail = "UPDATE `login_credential` SET sa_state ='$state' WHERE id = '$id'";
+                $cd_update = mysqli_query($conn, $changedetail);
+                header ('Location: customer_dashboard.php');
+
+            }
+
+            if(!empty($sa_city)) {
+
+                $changedetail = "UPDATE `login_credential` SET sa_city ='$sa_city' WHERE id = '$id'";
+                $cd_update = mysqli_query($conn, $changedetail);
+                header ('Location: customer_dashboard.php');
+
+            }
+
+            if(!empty($sa_pincode)) {
+
+                $changedetail = "UPDATE `login_credential` SET sa_pincode ='$sa_pincode' WHERE id = '$id'";
+                $cd_update = mysqli_query($conn, $changedetail);
+                header ('Location: customer_dashboard.php');
+
+            }
+
+        }
+
+        if (isset($_POST['cd-logout'])) {
+
+            echo 'TEST' ;
+
+                unset($_COOKIE['user']); 
+                setcookie('user', '', -1, '/');
+                header ('Location: customer_login.php');
+        }
+
     }
 
-    if (isset($_POST['cd-user']) or isset($_POST['cd-name']) or isset($_POST['cd-email']) or isset($_POST['cd-number'])) {
-
-        $cd_user = $_POST["cd-user"];
-        $cd_name = $_POST["cd-name"];
-        $cd_email = $_POST["cd-email"];
-        $cd_number = $_POST["cd-number"];
-
-        $cd_user = mysqli_real_escape_string($conn, $cd_user);
-        $cd_name = mysqli_real_escape_string($conn, $cd_name);
-        $cd_email = mysqli_real_escape_string($conn, $cd_email);
-        $cd_number = mysqli_real_escape_string($conn, $cd_number);
-
-        if(!empty($cd_user)) {
-
-            $changedetail = "UPDATE `login_credential` SET user ='$cd_user' WHERE id = '$id'";
-            $cd_update = mysqli_query($conn, $changedetail);
-            $cookie_name = "user";
-            $cookie_value = $row["user"];
-            setcookie($cookie_name, $cookie_value, time() + (86400 * 30), "/"); // 86400 = 1 day
-            header ('Location: customer_login.php');
-        }
-        if(!empty($cd_name)) {
-
-            $changedetail = "UPDATE `login_credential` SET name = '$cd_name' WHERE id = '$id'";
-            $cd_update = mysqli_query($conn, $changedetail);
-            header ('Location: customer_dashboard.php');
-        }
-        if(!empty($cd_email)) {
-
-            $changedetail = "UPDATE `login_credential` SET email ='$cd_email' WHERE id = '$id'";
-            $cd_update = mysqli_query($conn, $changedetail);
-            header ('Location: customer_dashboard.php');
-        }
-        if(!empty($cd_number)) {
-
-            $changedetail = "UPDATE `login_credential` SET phone_number ='$cd_number' WHERE id = '$id'";
-            $cd_update = mysqli_query($conn, $changedetail);
-            header ('Location: customer_dashboard.php');
-        }
-    } 
-
-    if (isset($_POST['cd-ba']) or isset($_POST['ba-country']) or isset($_POST['ba-state']) or isset($_POST['ba-city']) or isset($_POST['ba-pincode'])) {
-
-        $cd_ba = $_POST["cd-ba"];
-        $ba_city = $_POST["ba-city"];
-        $ba_pincode = $_POST["ba-pincode"];
-        $country = $_POST["ba-country"];
-        $state = $_POST["ba-state"];
-
-        $cd_ba = mysqli_real_escape_string($conn, $cd_ba);
-        $country = mysqli_real_escape_string($conn, $country);
-        $state = mysqli_real_escape_string($conn, $state);
-
-        if(!empty($cd_ba)) {
-
-            $changedetail = "UPDATE `login_credential` SET billing_address ='$cd_ba' WHERE id = '$id'";
-            $cd_update = mysqli_query($conn, $changedetail);
-            header ('Location: customer_dashboard.php');
-
-        }
-
-        if(!empty($country)) {
-
-            $changedetail = "UPDATE `login_credential` SET ba_country ='$country' WHERE id = '$id'";
-            $cd_update = mysqli_query($conn, $changedetail);
-            header ('Location: customer_dashboard.php');
-
-        }
-
-        if(!empty($state)) {
-
-            $changedetail = "UPDATE `login_credential` SET ba_state ='$state' WHERE id = '$id'";
-            $cd_update = mysqli_query($conn, $changedetail);
-            header ('Location: customer_dashboard.php');
-
-        }
-
-        if(!empty($ba_city)) {
-
-            $changedetail = "UPDATE `login_credential` SET ba_city ='$ba_city' WHERE id = '$id'";
-            $cd_update = mysqli_query($conn, $changedetail);
-            header ('Location: customer_dashboard.php');
-
-        }
-
-        if(!empty($ba_pincode)) {
-
-            $changedetail = "UPDATE `login_credential` SET ba_pincode ='$ba_pincode' WHERE id = '$id'";
-            $cd_update = mysqli_query($conn, $changedetail);
-            header ('Location: customer_dashboard.php');
-
-        }
-
-    }
-    if (isset($_POST['cd-sa']) or isset($_POST['sa-country']) or isset($_POST['sa-state']) or isset($_POST['sa-city']) or isset($_POST['sa-pincode'])) {
-
-        $cd_sa = $_POST["cd-sa"];
-        $sa_city = $_POST["sa-city"];
-        $sa_pincode = $_POST["sa-pincode"];
-        $country = $_POST["sa-country"];
-        $state = $_POST["sa-state"];
-
-        $cd_ba = mysqli_real_escape_string($conn, $cd_ba);
-        $country = mysqli_real_escape_string($conn, $country);
-        $state = mysqli_real_escape_string($conn, $state);
-
-        if(!empty($cd_sa)) {
-
-            $changedetail = "UPDATE `login_credential` SET shipping_address ='$cd_sa' WHERE id = '$id'";
-            $cd_update = mysqli_query($conn, $changedetail);
-            header ('Location: customer_dashboard.php');
-
-        }
-
-        if(!empty($country)) {
-
-            $changedetail = "UPDATE `login_credential` SET sa_country ='$country' WHERE id = '$id'";
-            $cd_update = mysqli_query($conn, $changedetail);
-            header ('Location: customer_dashboard.php');
-
-        }
-
-        if(!empty($state)) {
-
-            $changedetail = "UPDATE `login_credential` SET sa_state ='$state' WHERE id = '$id'";
-            $cd_update = mysqli_query($conn, $changedetail);
-            header ('Location: customer_dashboard.php');
-
-        }
-
-        if(!empty($sa_city)) {
-
-            $changedetail = "UPDATE `login_credential` SET sa_city ='$sa_city' WHERE id = '$id'";
-            $cd_update = mysqli_query($conn, $changedetail);
-            header ('Location: customer_dashboard.php');
-
-        }
-
-        if(!empty($sa_pincode)) {
-
-            $changedetail = "UPDATE `login_credential` SET sa_pincode ='$sa_pincode' WHERE id = '$id'";
-            $cd_update = mysqli_query($conn, $changedetail);
-            header ('Location: customer_dashboard.php');
-
-        }
-
+    else {
+        echo 'User is not set';
+        header ('Location: customer_login.php');
     }
 
     if (isset($_POST['cd-logout'])) {
-
-        echo 'TEST' ;
-
-            unset($_COOKIE['user']); 
-            setcookie('user', '', -1, '/');
-            header ('Location: customer_login.php');
+        // Unset the user cookie
+        if (isset($_COOKIE['user'])) {
+            unset($_COOKIE['user']);
+            // Set the cookie's expiration time to the past to delete it
+            setcookie('user', '', time() - 3600, '/');
+        }
+    
+        // Redirect the user to the login page
+        header('Location: customer_login.php');
+        exit(); // Don't forget to exit after redirecting
     }
-
-}
-
-else {
-    echo 'User is not set';
-    header ('Location: customer_login.php');
-}
+    
+    
 ?>
 
 <body>
@@ -295,7 +310,9 @@ else {
 
             <a class="sidebar-item" href="#AB"> My Product Reviews </a><br><br>
             <a class="sidebar-item" href="#NW-Modal"> Newsletter Subscription </a><br><br>
-            <button class="sidebar-item" id="cd-logout" name="cd-logout" > Logout </button><br>
+            <form method="POST" action="customer_dashboard.php">
+                <button class="cd-logout" type="submit" id="cd-logout" name="cd-logout">Logout</button><br>
+            </form>
         </div>
 
         <div class="cd-gi" style="width: 100%; height: 25.0vh;">
@@ -513,6 +530,7 @@ else {
     <script src="../js/modal.js"></script>
     <script src="../js/country-states.js"></script>
     <script src="../js/country-selector.js"></script>
+    <script src="../js/logout.js"></script>
 
     <footer>
         <br><br>
