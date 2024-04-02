@@ -22,7 +22,7 @@
       <div class="topnav">
         <img src="https://media.discordapp.net/attachments/1196163965110202440/1196761972146966578/HDO.png?ex=66151770&is=6602a270&hm=4585e59806b9c1a250444f77da2ce7887506375ab43ce78f334182d5bc265086&=&format=webp&quality=lossless&width=330&height=350" class = "logo" alt="Logo">
         <a class="df" href="laptop.php">Laptops</a>
-        <a class="df" href="#pc.php">Desktop PC's</a>
+        <a class="df" href="pc.php">Desktop PC's</a>
         <a class="df" href="#ND">Networking Devices</a>
         <a class="df" href="#PS">Printers & Scanners</a>
         <a class="df" href="#PCP">PC Parts</a>

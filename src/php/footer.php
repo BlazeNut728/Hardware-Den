@@ -16,7 +16,7 @@
 
         <div class = "feature">
             <div class = "f-cont1">
-                <i class="fa-solid fa-headset" style = "font-size: 2.9vh; border-radius: 65px; border: 2px solid #ff8400; padding: 1.8vh; background-color: #ff8400; margin-top: 2.5vh;"></i> <br>
+                <i class="fa-solid fa-headset" style = "font-size: 2.9vh; border-radius: 6.5vh; border: 0.2vh solid #ff8400; padding: 1.8vh; background-color: #ff8400; margin-top: 2.5vh;"></i> <br>
                 <div class = "f-head">
                     Product Support
                 </div>
@@ -26,7 +26,7 @@
             </div>
 
             <div class = "f-cont2">
-                <i class="fa-solid fa-user" style = "font-size: 2.9vh; border-radius: 65px; border: 2px solid #ff8400; padding: 1.8vh; background-color: #ff8400; margin-top: 2.5vh;"></i> <br>
+                <i class="fa-solid fa-user" style = "font-size: 2.9vh; border-radius: 6.5vh; border: 0.2vh solid #ff8400; padding: 1.8vh; background-color: #ff8400; margin-top: 2.5vh;"></i> <br>
                 <div class = "f-head">
                     Personal Account
                 </div>
@@ -36,7 +36,7 @@
             </div>
 
             <div class = "f-cont3">
-                <i class="fa-solid fa-tag" style = "font-size: 2.9vh; border-radius: 65px; border: 2px solid #ff8400; padding: 1.8vh; background-color: #ff8400; margin-top: 2.5vh;"></i> <br>
+                <i class="fa-solid fa-tag" style = "font-size: 2.9vh; border-radius: 6.5vh; border: 0.2vh solid #ff8400; padding: 1.8vh; background-color: #ff8400; margin-top: 2.5vh;"></i> <br>
                 <div class = "f-head">
                     Amazing Savings
                 </div>

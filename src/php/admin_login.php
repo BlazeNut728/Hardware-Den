@@ -11,11 +11,11 @@
 <body>
 
     <div class="bg"> 
-        <img src="https://media.discordapp.net/attachments/1196163965110202440/1196167412979093544/1080.png?ex=65b6a4b6&is=65a42fb6&hm=5236a6200e7fabc27304767c3cdbf49f136e41c8d11c475416d4a91bbbef2220&=&format=webp&quality=lossless&width=1244&height=700" class="bgimg" alt="Vector">
+        <img src="https://cdn.discordapp.com/attachments/1196163965110202440/1196167412979093544/1080.png?ex=6612edb6&is=660078b6&hm=6e7d6ec6f630cff09c55daa5ef8a2d9be09bd4b1906851e3dcf99d1668b95b18&" class="bgimg" alt="Vector">
     </div>
 
     <div class = form>
-        <img src="https://media.discordapp.net/attachments/1196163965110202440/1196183586852851722/Group-removebg-preview.png?ex=65b6b3c7&is=65a43ec7&hm=69cfd79540890af9e307513f8659311b314667fce7e2d55a647a8a2fe3bd164a&=&format=webp&quality=lossless&width=446&height=367" class="basket" alt="Basket">
+        <img src="https://cdn.discordapp.com/attachments/1196163965110202440/1196183586852851722/Group-removebg-preview.png?ex=6612fcc7&is=660087c7&hm=d08150e3042dfa40a3dae66c1c407589884085d6a449accc082acffc40fa163e&" class="basket" alt="Basket">
         
         <form form action="admin_login.php" method="POST">
             <div class = Rectangle1>
