@@ -43,6 +43,26 @@
             $imageLinks = explode("\n", $row["carousel_images"]);
             $descText = explode("\n", $row["about"]);
         }
+
+        if (isset($_COOKIE["user"])) 
+        {
+            $cookie_user = $_COOKIE["user"];
+
+            $sql_id = "SELECT * FROM `login_credential` where user = '$cookie_user'";
+            $result_id = mysqli_query($conn, $sql_id);
+            $row_id = mysqli_fetch_array($result_id, MYSQLI_ASSOC);
+
+            $UserID = 0;
+            
+            if (array_key_exists('id', $row_id)) {
+                $UserID = $row_id["id"];
+            }
+
+            if($UserID = 0)
+            {
+                header('customer_login.php');
+            }
+        }
     ?>
 
     <div class= "ar">
@@ -75,7 +95,7 @@
         <?php
         if($id >= 1 && $id <= 999999)
         {
-            echo '<a class="detail-title">' . $row["release_year"] . ' ' . $row["manufacturer"] . ' ' . $row["model_name"] . '</a> <input type="submit" value="Add To Cart" class="item-submit"> <br>';
+            echo '<a class="detail-title">' . $row["release_year"] . ' ' . $row["manufacturer"] . ' ' . $row["model_name"] . '</a> <input type="submit" value="Add To Cart" class="item-submit">' . '<input class="wishlist-btn" type="checkbox" id="wishlist-btn" value="'. $item_id = $row["laptop_id"]. '" /> <br>';
             echo '<div class="divider"></div><br>';
             echo '<a class="detail-price">₹ ' . $row["price"] . '</a><br><br>';
             echo '<a class="detail-spec-heading">Specifications:</a>';

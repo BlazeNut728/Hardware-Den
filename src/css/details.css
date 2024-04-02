@@ -269,3 +269,20 @@ body {
   transition-duration: 0.5s;
 
 }
+
+.wishlist-btn {
+  visibility:hidden;
+  font-size:1.8vw;
+  cursor:pointer;
+}
+.wishlist-btn:before {
+ content: "\2606";
+ position: absolute;
+ visibility:visible;
+ color: gold;
+}
+.wishlist-btn:checked:before {
+ content: "\2605";
+ position: absolute;
+ color: gold;
+}
