@@ -1,7 +1,6 @@
 body {
     margin: 0;
     padding: 0;
-    overflow: scroll;
  }
 
  .ar {
@@ -108,7 +107,7 @@ article {
 .au1:hover {
    
    -webkit-text-fill-color: #ff8400;
-   transition-duration: 0.4s;
+   transition: all 0.4s ease-in-out;
 }
 
 .auhead1 {
@@ -166,7 +165,7 @@ article {
 .au2:hover {
    
    -webkit-text-fill-color: #0156FF;
-   transition-duration: 0.4s;
+   transition: all 0.4s ease-in-out;
 }
 
 .auhead2 {
