@@ -100,7 +100,7 @@ article {
    font-family: Poppins;
    flex-direction: column;
    justify-content: center;
-   transition-duration: 0.4s;
+   transition: all 0.4s ease-in-out;
    
 }
 
@@ -159,13 +159,13 @@ article {
    font-family: Poppins;
    flex-direction: column;
    justify-content: center;
-   transition-duration: 0.4s;
+   transition: all 0.2s ease-in-out;
 }
 
 .au2:hover {
    
    -webkit-text-fill-color: #0156FF;
-   transition: all 0.4s ease-in-out;
+   transition: all 0.2s ease-in-out;
 }
 
 .auhead2 {

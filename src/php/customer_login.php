@@ -70,7 +70,10 @@
 
                 <input type="submit" value="Submit" class="cl-submit">
                 <a class = "cl-em"><?php echo $msg; ?></a>
+
             </form>
+
+            <br>
 
         </div>
 
@@ -84,11 +87,10 @@
                 •  Keep more than one address <br>
                 •  Track orders and more <br>
             </a>
-
-            <input type="submit" value="Create An Account" class="cl-submit">
+            <br><br>
+            <a href = "customer_register.php" class="cl-submit"> Create An Account</a>
 
         </div>
-
     </div>
     
     <footer>
