@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 30, 2024 at 07:00 PM
+-- Generation Time: Apr 07, 2024 at 01:11 AM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -130,7 +130,8 @@ CREATE TABLE `login_credential` (
 --
 
 INSERT INTO `login_credential` (`id`, `user`, `pass`, `name`, `email`, `phone_number`, `billing_address`, `ba_country`, `ba_state`, `ba_city`, `ba_pincode`, `shipping_address`, `sa_country`, `sa_state`, `sa_city`, `sa_pincode`, `admin`) VALUES
-(1, 'Saryan728', 'Neeta72819', 'Aryan Sharma', 'Saryan728@gmail.com', '9757142120', '203, Ashtavinayak Darshan CHS, Tekdi Bangla Panchpakhadi, Thane (W) - 400602', 'IN', 'MH', 'Thane', 400602, '203, Ashtavinayak Darshan CHS, Tekdi Bangla Panchpakhadi, Thane (W) - 400602', '', '', '', 0, 1);
+(1, 'Aryan728', 'Neeta72819', 'Aryan Sharma', 'Saryan728@gmail.com', '9757142120', '203, Ashtavinayak Darshan CHS, Tekdi Bangla Panchpakhadi, Thane (W) - 400602', 'LV', '006', 'Thane', 123123, '203, Ashtavinayak Darshan CHS, Tekdi Bangla Panchpakhadi, Thane (W) - 400602', '', '', '', 0, 1),
+(2, 'test', 'test', 'Ryan Knight', 'blazeknight728@gmail.com', '9899889911', '123, Building Name, Street Name, Area Name', 'ES', 'B', 'Barcelona', 12141, '', '', '', '', 0, 0);
 
 -- --------------------------------------------------------
 
@@ -149,7 +150,7 @@ CREATE TABLE `newsletter` (
 --
 
 INSERT INTO `newsletter` (`nw_id`, `email`, `status`) VALUES
-(1, 'Saryan728@gmail.com', 1),
+(1, 'Saryan728@gmail.com', 0),
 (1292, 'neetasharma2007@rediffmail.com', 1),
 (1418, 'mj123@gmail.com', 1),
 (1444, 'oyecadbury@gmail.com', 1);
@@ -257,7 +258,7 @@ ALTER TABLE `laptop`
 -- AUTO_INCREMENT for table `login_credential`
 --
 ALTER TABLE `login_credential`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `newsletter`
