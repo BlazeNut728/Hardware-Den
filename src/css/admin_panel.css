@@ -1,0 +1,209 @@
+body {
+    margin: 0;
+    padding: 0;
+    transition: all 0.5s ease-in-out;
+    font-family: 'Poppins', sans-serif;
+}
+.topnav {
+
+    width: 100%;
+    height: 9.2vh;
+    flex-shrink: 0;
+    border: 0.55vw;
+    display: grid;
+    grid-template-columns: 15% 2% 78%;
+    transition: all 0.5s ease-in-out;
+
+}
+
+.topnav:hover {
+
+    box-shadow: 0 0.4vw 1.6vw 0 rgba(135, 90, 31, 0.37);
+    backdrop-filter: blur( 0.2vw );
+    -webkit-backdrop-filter: blur( 0.2vw );
+    transition: all 0.5s ease-in-out;
+
+}
+
+.logo-container {
+
+    background-color: #ff8400;
+}
+
+
+.logo {
+
+    display: block;
+    margin-top: 1.0vw;
+    margin-left: 2.0vw;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-weight: 600;
+    font-size: 1.6vw;
+    -webkit-text-fill-color: black;
+}
+
+
+.menu-container {
+
+    margin-left: 2.0vh;
+}
+
+.nav-slash {
+
+    height: 9.2vh;
+}
+
+.df {
+ 
+    font-size: 0.9vw;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    text-decoration: none;
+    color: black;
+    transition: all 0.5s ease-in-out;
+    padding-right: 1.0vw;
+    margin-top: 3.7vh;
+    margin-left: 1.5vw;
+
+}
+
+.df:hover {
+ 
+    -webkit-text-fill-color: #ff8400;
+    transition-duration: 0.2s;
+
+}
+
+.od {
+
+    display: inline-flex;
+
+    font-size: 0.7vw;
+    font-family: 'Poppins', sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    border-radius: 0.25vh;
+    border: 0.2vw solid var(--Color---3, #ff8400);
+    -webkit-text-fill-color: #ff8400;
+    text-decoration: none;
+
+    margin-top: 2.8vh;
+    margin-bottom: 2.6vh;
+    margin-left: 9.0vw;
+
+    padding-top: 0.6vh;
+    padding-bottom: 0.8vh;
+    padding-left: 1.25vw;
+    padding-right: 1.25vw;
+}
+
+.od:hover {
+
+    -webkit-text-fill-color: white;
+    border-color: white;
+    transition-duration: 0.2s;
+
+}
+
+.panel-container {
+    display: grid;
+    grid-template-columns: 15% auto;
+    width: 100%;
+    height: 100%;
+}
+
+.sidebar {
+
+    width: auto;
+    height: 90.8vh;
+    border-radius: 0.0vh;
+    background-color: #ff8400;
+    transition: all 0.5s ease-in-out;
+
+}
+
+.sidebar:hover {
+    
+    box-shadow: 0 0.4vw 1.6vw 0 rgb(135, 93, 31);
+    backdrop-filter: blur( 0.2vw );
+    -webkit-backdrop-filter: blur( 0.2vw );
+    transition: all 0.5s ease-in-out;
+
+}
+
+.sidebar-item {
+
+    display: block;
+
+    margin-top: 3.5vh;
+    margin-bottom: 3.5vh;
+
+    margin-left: 2.25vw;
+
+    transition: all 0.5s ease-in-out;
+}
+
+
+.divider {
+
+    display: block;
+    width: 90%;
+    height: 0.3vh;
+
+    margin-top: 1.0vh;
+    margin-bottom: 1.0vh;
+
+    margin-left: auto;
+    margin-right: auto;
+
+    background-color: #020202;
+}
+
+.sidebar-head-text {
+
+    display: block;
+    color: black; 
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.4vw; 
+    font-style: normal; 
+    font-weight: 600;
+
+    text-decoration: none;
+    text-align: center;
+
+    margin-top: 3.0vh;
+    margin-bottom: 2.0vh;
+
+}
+
+.sidebar-item-text {
+
+    color: black; 
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.0vw; 
+    font-style: normal; 
+    font-weight: 600;
+    text-decoration: none;
+
+}
+
+.sidebar-item-text:hover {
+
+    font-size: 1.2vw; 
+    font-style: normal; 
+    font-weight: 600; 
+    text-decoration: none;
+    color: white;
+    transition: all 0.5s ease-in-out;
+}
+
+.fa-solid {
+
+    margin-right: 0.5vw;
+}
+
+.grid-container {
+
+    display: grid;
+    grid-template-columns: auto auto auto auto auto;
+}

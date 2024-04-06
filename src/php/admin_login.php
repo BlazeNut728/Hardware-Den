@@ -53,14 +53,14 @@
         $username = mysqli_real_escape_string($conn, $username);  
         $password = mysqli_real_escape_string($conn, $password);  
       
-        $sql = "SELECT * FROM `login_credential` where user = '$username' and pass = '$password'";  
+        $sql = "SELECT * FROM `login_credential` where user = '$username' and pass = '$password' and admin = '1'";  
         $result = mysqli_query($conn, $sql);  
         $row = mysqli_fetch_array($result, MYSQLI_ASSOC);  
         $count = mysqli_num_rows($result);  
           
         if($count == 1){  
             echo "<h1><center> Login successful </center></h1>";  
-            header("location: term_conditions.php");
+            header("location: admin_panel.php");
         }  
         else{  
             echo "<h1> Login failed. Invalid username or password.</h1>";  
