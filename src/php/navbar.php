@@ -35,7 +35,7 @@
           <label class="button searchbutton" for="searchright"><span class="mglass">&#9906;</span></label>
       </form>
         </div>
-        <a class="of" href="#CRT"><i class="fa badge fa-lg" value=8 style="font-size:1.9vh; padding: 1vh; margin-left: 2.25vh; margin-top: 3.3vh; color: black;">&#xf07a;</i></a>
+        <a class="of" href="display_cart.php"><i class="fa badge fa-lg" value=8 style="font-size:1.9vh; padding: 1vh; margin-left: 2.25vh; margin-top: 3.3vh; color: black;">&#xf07a;</i></a>
         <a class="of" href="customer_dashboard.php"><i class="fa-solid fa-user" style="font-size:1.9vh; padding: 1vh; margin-left: 2.25vh; margin-top: 2.4vh; color: black;"></i></a>
         
           </i></a>      

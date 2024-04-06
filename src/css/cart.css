@@ -1,0 +1,292 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.ar {
+    font-family: Poppins;
+    font-size: 1.4vh;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    transition: all 0.5s ease-in-out;
+    margin-left: 13.1vw;
+    margin-top: 2.1vh;
+    margin-bottom: 0.5vh;
+
+ }
+
+ .hm {
+
+   color: #000;
+   text-decoration: none;
+
+ }
+
+ .hm:hover {
+
+   color: #ff8400;
+   text-decoration: none;
+   transition: all 0.2s ease-in-out;
+
+ }
+
+ .lg {
+
+   color: #000;
+   text-decoration: none;
+   
+}
+
+.lg:hover {
+
+   color: #ff8400;
+   text-decoration: none;
+   transition: all 0.2s ease-in-out;
+
+ }
+
+.stc {
+
+   color: #000; 
+   font-family: Poppins; 
+   font-size: 1.8vw; 
+   font-style: normal; 
+   font-weight: 600; 
+   line-height: normal; 
+   margin-bottom: 2.2vh;
+}
+
+.gtc {
+
+   color: #000; 
+   font-family: Poppins; 
+   font-size: 1.2vw; 
+   font-style: normal; 
+   font-weight: 600; 
+   line-height: normal; 
+   margin-left: 13.1vw;
+
+}
+
+.cart-item {
+
+    display: grid;
+    grid-template-columns: 16.5% auto 18.5% ;
+    
+    width: 72.5%;
+    height: auto;
+
+    margin-left: 13.3vw;
+    margin-right: auto;
+
+    padding: 1.0vw;
+
+    border-radius: 2.0vw;
+    
+}
+
+.cart-item:hover {
+
+    background: rgba( 255, 255, 255, 0.25 );
+    box-shadow: 0 0.8vh 3.2vh 0 rgba(255, 136, 0, 0.911);
+    backdrop-filter: blur( 0.4vh );
+    -webkit-backdrop-filter: blur( 0.4vh );
+    border-radius: 2.0vh;
+    transition: all 1s ease-in-out;
+    
+}
+
+.cart-item-img {
+
+    width: 10.0vw ;
+    max-height: 20.0vh ;
+
+    /* border: 0.2vw solid #000;
+    border-radius: 2.0vw; */
+
+}
+
+.cart-img {
+
+    width: 10.0vw ;
+    max-height: 20.0vh ;
+}
+
+.cart-item-info {
+
+    /* border: 0.2vw solid #000;
+    border-radius: 2.0vw; */
+
+}
+
+.cart-item-head {
+
+    display: block;
+
+    color: #000; 
+    font-family: Poppins; 
+    font-size: 1.8vw;  
+    font-weight: 600;
+
+   margin-left: 1.0vw;
+
+}
+
+.cart-item-quantity {
+    
+    display: block;
+    width: 3.0vw;
+
+    font-family: Poppins; 
+    font-size: 0.8vw;  
+    font-weight: 600;
+
+    text-decoration: none;
+
+    margin-left: 2.0vw ;
+    margin-top: 0.5vw;
+
+    border: #ff8400 0.2vw solid;
+    border-radius: 0.5vw;
+
+    text-align: center;
+}
+
+.cart-item-quantity:hover {
+
+    border: green 0.2vw solid;
+    border-radius: 0.5vw;
+
+}
+
+
+.cart-item-end {
+
+    /* border: 0.2vw solid #000;
+    border-radius: 2.0vw; */
+
+    margin-left: 1.75vw;
+
+}
+
+.cart-item-desc {
+
+    display: block;
+
+    color: #000; 
+    font-family: Poppins; 
+    font-size: 1.0vw;  
+    font-weight: 400;
+
+    margin-left: 1.0vw;
+    margin-top: 1.0vh;
+
+}
+
+.cart-item-price {
+
+    color: #000; 
+    font-family: Poppins; 
+    font-size: 1.6vw;  
+    font-weight: 600;
+
+}
+
+.cart-item-remove {
+
+    display: block;
+
+    font-size: 1.4vh;
+    font-family: 'Poppins', sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    border-radius: 5vh;
+    border: 0.4vh solid var(--Color---3, #ff8400);
+    -webkit-text-fill-color: #ff8400;
+    text-decoration: none;
+    background-color: white;
+
+    margin-top: 4.0vh;
+    margin-left: 0.75vw;
+
+    padding-top: 0.6vh;
+    padding-bottom: 0.8vh;
+    padding-left: 2.5vh;
+    padding-right: 2.5vh;
+}
+
+.cart-item-remove:hover {
+
+    -webkit-text-fill-color: red;
+    border-color: red;
+    transition-duration: 0.2s;
+
+}
+
+.divider {
+
+    background-color: #000;
+    width: 74.5%;
+    height: 0.3vh;
+    margin-left: 13.3vw;
+}
+
+.cart-total {
+
+    display: block;
+
+    width: 30%;
+
+    margin-left: 60.0vw;
+}
+
+.total-title {
+
+    color: #000; 
+    font-family: Poppins; 
+    font-size: 1.4vw;  
+    font-weight: 400;
+
+}
+
+.total-amount1 {
+
+    color: #000; 
+    font-family: Poppins; 
+    font-size: 1.4vw;  
+    font-weight: 600;
+    
+    margin-left: 7.2vw;
+}
+
+.total-amount2 {
+
+    color: #000; 
+    font-family: Poppins; 
+    font-size: 1.4vw;  
+    font-weight: 600;
+    
+    margin-left: 10.3vw;
+}
+
+.total-amount3 {
+
+    color: #000; 
+    font-family: Poppins; 
+    font-size: 1.4vw;  
+    font-weight: 600;
+    
+    margin-left: 8.4vw;
+}
+
+.separator {
+
+    display: block;
+
+    margin-right: 4.5vw;
+
+    background-color: #000;
+    width: 92%;
+    height: 0.3vh;
+}

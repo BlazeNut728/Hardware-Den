@@ -217,7 +217,7 @@
         </div>
 
     <?php
-        $pageName = "Laptop";
+        $pageName = "laptop";
     ?>
     <script>
         var pageName = "<?php echo $pageName; ?>";

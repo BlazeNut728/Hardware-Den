@@ -4,7 +4,7 @@ error_reporting(0);
 
 if(isset($_POST["action"]))
 {
-    if($_POST["page_name"] == 'Laptop')
+    if($_POST["page_name"] == 'laptop')
     {
         $sql = "SELECT * FROM laptop WHERE 1"; // Base query to fetch all data
 
@@ -66,9 +66,15 @@ if(isset($_POST["action"]))
                     'RAM: '.$row["ram_size"].' GB | '.$row["ram_speed"].' MHz<br>'.
                     'Storage: '.$row["storage_type"].' | '.$row["storage_size"].' GB<br>'.
                     '</div>'.
-                    '<a class="card-text">Rs '.$row["price"].'</a>'.
+                    '<a class="card-text">₹ '.$row["price"].'</a>'.
                     '<form action="cart.php" method="POST">'.
-                    '<input type="submit" value="Add To Cart" class="item-submit">'.
+                    '<input type="hidden" name="product_id" value="'.$row["laptop_id"].'">'.
+                    '<input type="hidden" name="product_name" value="'.$row["manufacturer"].' '.$row["model_name"].'">'.
+                    '<input type="hidden" name="price" value="'.$row["price"].'">'.
+                    '<input type="hidden" name="display_image" value="'.$row["display_image"].'">'.
+                    '<input type="hidden" name="quantity" value="1">'.
+                    '<input type="hidden" name="desc" value="'.$row["cpu_brand"].' '.$row["cpu_series"].' '.$row["cpu_name"]. '<br>'. $row["gpu_brand"].' '.$row["gpu_series"].'<br>'. $row["ram_size"].' GB | '.$row["ram_speed"].' MHz<br>'.'">'.
+                    '<input type="submit" name="add_to_cart" value="Add To Cart" class="item-submit">'.
                     '</form>'.
                     '<br>'.
                     '</div>'.
@@ -141,7 +147,13 @@ if(isset($_POST["action"]))
                     '</div>'.
                     '<a class="card-text">Rs '.$row["price"].'</a>'.
                     '<form action="cart.php" method="POST">'.
-                    '<input type="submit" value="Add To Cart" class="item-submit">'.
+                    '<input type="hidden" name="product_id" value="'.$row["pc_id"].'">'.
+                    '<input type="hidden" name="product_name" value="'.$row["manufacturer"].' '.$row["model_name"].'">'.
+                    '<input type="hidden" name="price" value="'.$row["price"].'">'.
+                    '<input type="hidden" name="display_image" value="'.$row["images"].'">'.
+                    '<input type="hidden" name="quantity" value="1">'.
+                    '<input type="hidden" name="desc" value="'.$row["cpu_brand"].' '.$row["cpu_series"].' '.$row["cpu_name"]. '<br>'. $row["gpu_brand"].' '.$row["gpu_series"].'<br>'. $row["ram_size"].' GB | '.$row["ram_speed"].' MHz<br>'.'">'.
+                    '<input type="submit" name="add_to_cart" value="Add To Cart" class="item-submit">'.
                     '</form>'.
                     '<br>'.
                     '</div>'.
