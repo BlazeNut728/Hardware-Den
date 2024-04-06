@@ -21,7 +21,6 @@
 
         <?php      
             include('data_conn.php');
-            session_start();
             
             if(empty($_SESSION['cart'])) {
                 echo '<br><br><div style="font-family: Poppins; font-size: 2.0vW; font-style: normal; font-weight: 600; color:#ff8400; margin-left: 13.3vw;">Your Cart is Empty</div>';

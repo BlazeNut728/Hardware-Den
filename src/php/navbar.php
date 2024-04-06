@@ -11,6 +11,25 @@
     <link rel="icon" type="images/x-icon" href="../../images/favicon.ico" />
     <title>Hardware Den</title>
   </head>
+
+  <?php
+// Assuming you have session_start() at the beginning of your PHP script
+session_start();
+
+// Assuming you have a function to fetch cart data, for example:
+function getCartItemCount() {
+    // This function should return the count of items in the user's cart
+    // For demonstration purposes, let's say we're storing cart data in a session variable
+    if(isset($_SESSION['cart'])) {
+        return count($_SESSION['cart']); // Return the count of items in the cart array
+    } else {
+        return 0; // Return 0 if cart is empty
+    }
+}
+
+// Now, let's use the function to get the cart item count
+$cartItemCount = getCartItemCount();
+?>
   
     <div class = top-bar> 
     <a class = "tbt"> Mon-Thu:  9:00 AM - 5:30 PM </a>
@@ -35,7 +54,7 @@
           <label class="button searchbutton" for="searchright"><span class="mglass">&#9906;</span></label>
       </form>
         </div>
-        <a class="of" href="display_cart.php"><i class="fa badge fa-lg" value=8 style="font-size:1.9vh; padding: 1vh; margin-left: 2.25vh; margin-top: 3.3vh; color: black;">&#xf07a;</i></a>
+        <a class="of" href="display_cart.php"><i class="fa badge fa-lg" value= "<?php echo $cartItemCount; ?>" style="font-size:1.9vh; padding: 1vh; margin-left: 2.25vh; margin-top: 3.3vh; color: black;">&#xf07a;</i></a>
         <a class="of" href="customer_dashboard.php"><i class="fa-solid fa-user" style="font-size:1.9vh; padding: 1vh; margin-left: 2.25vh; margin-top: 2.4vh; color: black;"></i></a>
         
           </i></a>      
