@@ -13,21 +13,20 @@
   </head>
 
   <?php
-// Assuming you have session_start() at the beginning of your PHP script
+
 session_start();
 
-// Assuming you have a function to fetch cart data, for example:
+
 function getCartItemCount() {
-    // This function should return the count of items in the user's cart
-    // For demonstration purposes, let's say we're storing cart data in a session variable
+    
+  
     if(isset($_SESSION['cart'])) {
-        return count($_SESSION['cart']); // Return the count of items in the cart array
+        return count($_SESSION['cart']);
     } else {
-        return 0; // Return 0 if cart is empty
+        return 0; 
     }
 }
 
-// Now, let's use the function to get the cart item count
 $cartItemCount = getCartItemCount();
 ?>
   
@@ -42,7 +41,7 @@ $cartItemCount = getCartItemCount();
         <img src="https://media.discordapp.net/attachments/1196163965110202440/1196761972146966578/HDO.png?ex=66151770&is=6602a270&hm=4585e59806b9c1a250444f77da2ce7887506375ab43ce78f334182d5bc265086&=&format=webp&quality=lossless&width=330&height=350" class = "logo" alt="Logo">
         <a class="df" href="laptop.php">Laptops</a>
         <a class="df" href="pc.php">Desktop PC's</a>
-        <a class="df" href="#ND">Networking Devices</a>
+        <a class="df" href="network_card.php">Networking Devices</a>
         <a class="df" href="#PS">Printers & Scanners</a>
         <a class="df" href="#PCP">PC Parts</a>
         <a class="df" href="#AOP">All Other Products</a>

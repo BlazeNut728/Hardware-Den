@@ -44,6 +44,18 @@
             $descText = explode("\n", $row["about"]);
         }
 
+        else if($id >= 2000000 && $id <= 2999999)
+        {
+            $sql = "SELECT * FROM network_card WHERE network_card_id = '$id'";
+            $result = mysqli_query($conn, $sql);
+            $row = mysqli_fetch_assoc($result);
+
+            $id= $row['network_card_id'];
+            
+            $imageLinks = explode("\n", $row["carousel_images"]);
+            $descText = explode("\n", $row["about"]);
+        }
+
         if (isset($_COOKIE["user"])) 
         {
             $cookie_user = $_COOKIE["user"];
@@ -166,6 +178,37 @@
             echo '</div>';
             echo '</div>';
         }
+
+        else if($id >= 2000000 && $id <= 2999999)
+        {
+            echo '<a class="detail-title">' . $row["manufacturer"] . ' ' . $row["model_name"] . '</a> <input type="submit" value="Add To Cart" class="item-submit"> <br>';
+            echo '<div class="divider"></div><br>';
+            echo '<a class="detail-price">₹ ' . $row["price"] . '</a><br><br>';
+            echo '<a class="detail-spec-heading">Specifications:</a>';
+            echo '<ul class="detail-spec-desc">';
+            echo '<li>Brand: ' . $row["manufacturer"] . '</li>';
+            echo '<li>Model Name: ' . $row["model_name"] . '</li>';
+            echo '<li>Category: ' . $row["category"] . '</li>';
+            echo '</ul>';
+            echo '<div class="icon-container">';
+            echo '<div class="icon-box">';
+            echo '<i class="fa-solid fa-rotate-left"></i>';
+            echo '<br>7 Day <br> Replacement';
+            echo '</div>';
+            echo '<div class="icon-box">';
+            echo '<i class="fa-solid fa-truck-ramp-box"></i>';
+            echo '<br>Free <br> Delivery';
+            echo '</div>';
+            echo '<div class="icon-box">';
+            echo '<i class="fa-solid fa-calendar-check"></i>';
+            echo '<br>Warranty <br> Policy';
+            echo '</div>';
+            echo '<div class="icon-box">';
+            echo '<i class="fa-solid fa-award"></i>';
+            echo '<br>Top <br> Brand';
+            echo '</div>';
+            echo '</div>';
+        }
         ?>
 
 
@@ -196,6 +239,18 @@
                 echo '</div>';
             }
             else if($id >= 100000 && $id <= 1999999)
+            {
+                echo '<div class="desc-grid-item">';
+                echo '<ul class="detail-spec-desc" style="margin-left: 9.1vw; margin-right: 9.1vw;">';
+                foreach ($descText as $index => $text) {
+                    echo '<li>' . $text . '</li><br>';
+                }
+                echo '</ul>';
+                echo '</div>';
+
+                echo '<div class="divider" style="width: 100%;"></div><br>';
+            }
+            else if($id >= 200000 && $id <= 2999999)
             {
                 echo '<div class="desc-grid-item">';
                 echo '<ul class="detail-spec-desc" style="margin-left: 9.1vw; margin-right: 9.1vw;">';

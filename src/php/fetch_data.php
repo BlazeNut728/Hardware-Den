@@ -162,9 +162,90 @@ if(isset($_POST["action"]))
         }
 
     }
+
+    if($_POST["page_name"] == 'network_card')
+    {
+        $sql = "SELECT * FROM network_card WHERE 1";
+
+        
+        if(isset($_POST["category"]))
+        {
+            $category_filter = implode("','", $_POST["category"]);
+            $sql .= " AND category IN('".$category_filter."')";
+        }
+
+        if(isset($_POST["manufacturer"]))
+        {
+            $manufacturer_filter = implode("','", $_POST["manufacturer"]);
+            $sql .= " AND manufacturer IN('".$manufacturer_filter."')";
+        }
+
+        if(isset($_POST["interface"]))
+        {
+            $interface_filter = implode("','", $_POST["interface"]);
+            $sql .= " AND interface IN('".$interface_filter."')";
+        }
+
+
+        $result = mysqli_query($conn, $sql);
+
+        if(mysqli_num_rows($result) > 0)
+        {
+            while($row = mysqli_fetch_array($result))
+            {
+                
+                echo'<div class="card" id="modal">'.
+                    '<a href="details.php?id='.$row["network_card_id"].'" class="card-link">'. 
+                    '<div class="card-body">'.
+                    '<img src="'.$row["display_image"].'" class="card-image">'.
+                    '<a class="card-title">'.$row["manufacturer"].' '.$row["model_name"].'</a><br>'.
+                    '<div class="card-specs">'.
+                    '</div>'.
+                    '<a class="card-text">₹ '.$row["price"].'</a>'.
+                    '<form action="cart.php" method="POST">'.
+                    '<input type="hidden" name="product_id" value="'.$row["network_card_id"].'">'.
+                    '<input type="hidden" name="product_name" value="'.$row["manufacturer"].' '.$row["model_name"].'">'.
+                    '<input type="hidden" name="price" value="'.$row["price"].'">'.
+                    '<input type="hidden" name="display_image" value="'.$row["display_image"].'">'.
+                    '<input type="hidden" name="quantity" value="1">'.
+                    '<input type="submit" name="add_to_cart" value="Add To Cart" class="item-submit">'.
+                    '</form>'.
+                    '<br>'.
+                    '</div>'.
+                    '</div>';
+            }
+        }
+
+    }
     
 }
 else
-    {
-        echo '<div style = "font-family: Poppins; font-size: 2.6vh; font-style: normal; font-weight: 600; color:#ff8400; padding: 2.0vw; margin-left: 2.0vw;" >No Matches Found</div>';
+{
+    echo '<div style = "font-family: Poppins; font-size: 2.6vh; font-style: normal; font-weight: 600; color:#ff8400; padding: 2.0vw; margin-left: 2.0vw;" >No Matches Found</div>';
+}
+
+if(isset($_POST['search_query'])) {
+    
+    $search_query = mysqli_real_escape_string($connection, $_POST['search_query']);
+    
+    
+    $query = "SELECT * FROM * WHERE manufacturer OR model_name OR category LIKE '%$search_query%'";
+    
+    // Execute the query
+    $result = mysqli_query($connection, $query);
+    
+    // Check if query executed successfully
+    if($result) {
+        // Check if any results were returned
+        if(mysqli_num_rows($result) > 0) {
+            // Fetch and display search results
+            while($row = mysqli_fetch_assoc($result)) {
+                echo "<div>{$row['column_name']}</div>"; // Modify as per your database structure
+            }
+        } else {
+            echo "No results found.";
+        }
+    } else {
+        echo "Error executing query: " . mysqli_error($connection);
     }
+}
