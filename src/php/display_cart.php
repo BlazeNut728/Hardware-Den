@@ -108,7 +108,7 @@
             function updateTotalPrice(select, pricePerItem, itemId) {
                 var quantity = parseInt(select.value);
                 var totalPrice = pricePerItem * quantity;
-                var totalPriceElement = document.getElementById('cart-item-price-' + itemId);
+                var totalPriceElement = document.getElementById('cart-item-price' + itemId);
                 if (totalPriceElement) {
                     totalPriceElement.textContent = '₹ ' + totalPrice.toFixed(2);
                 } else {

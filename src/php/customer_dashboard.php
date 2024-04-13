@@ -22,6 +22,9 @@
     if (isset($_COOKIE["user"])) {
 
         $cookie_user = $_COOKIE["user"];
+        $user_id = $_COOKIE['user_id'];
+
+        echo json_encode(array("user_id" => $user_id));
 
         $sql = "SELECT * FROM `login_credential` where user = '$cookie_user'";
         $r1 = mysqli_query($conn, $sql);
@@ -531,6 +534,7 @@
     <script src="../js/modal.js"></script>
     <script src="../js/country-states.js"></script>
     <script src="../js/country-selector.js"></script>
+    <script src="../js/address_book.js"></script>
     <script src="../js/logout.js"></script>
 
     <footer>

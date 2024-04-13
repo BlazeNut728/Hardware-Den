@@ -13,12 +13,13 @@ $(document).ready(function(){
         var gpu_brand = get_filter('gpu_brand');
         var ram_size = get_filter('ram_size');
         var storage_size = get_filter('storage_size');
+        var interface = get_filter('interface');
         var page_name = pageName;
 
         $.ajax({
             url:"fetch_data.php?page_name=" + page_name,
             method:"POST",
-            data:{action:action, category:category, manufacturer:manufacturer, cpu_brand:cpu_brand, gpu_brand:gpu_brand, ram_size:ram_size, storage_size:storage_size, page_name: page_name},
+            data:{action:action, category:category, manufacturer:manufacturer, cpu_brand:cpu_brand, gpu_brand:gpu_brand, ram_size:ram_size, storage_size:storage_size, interface: interface, page_name: page_name},
             success:function(data){
                 $('.item').html(data);
             }
