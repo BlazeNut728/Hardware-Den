@@ -15,7 +15,7 @@ body {
     grid-template-columns: 15% 2% 78%;
     transition: all 0.5s ease-in-out;
 
-    background-color: #020202;
+    background-color: #0a0809;
 
 }
 
@@ -124,11 +124,18 @@ body {
 .sidebar {
 
     width: auto;
-    height: 90.8vh;
+    height: 100%;
     border-radius: 0.0vh;
-    background-color: #ff8400;
+    background-image: url("https://cdn.discordapp.com/attachments/1196163965110202440/1230570212676341800/Pngtreeorange_background_business_lines_1326869.png?ex=6633ccd1&is=662157d1&hm=0addc2a794b8acba28b71ecce71ec8b82be8fef1fb265154a0228e3e02e4ecef&");
+    background-color: transparent;
     transition: all 0.5s ease-in-out;
 
+}
+
+.body-container {
+
+    background-image: url("https://cdn.discordapp.com/attachments/1196163965110202440/1230568612067151992/6045754.jpg?ex=6633cb53&is=66215653&hm=290cec5dd90c1dad2e87c7eafadbd8a552ef3a7b253556322aef2b75e0819f19&");
+    background-color: transparent;
 }
 
 .sidebar:hover {
@@ -221,7 +228,7 @@ body {
 
 table {
     border-collapse: collapse;
-    width: 100%;
+    max-width: 100%;
 
     border: 0.2vw solid #ff8400;
     border-radius: 2.0vw;
@@ -237,7 +244,7 @@ th{
     border-bottom: 0.2vw solid #ff8400;
 
     font-family: 'Poppins', sans-serif;
-    font-size: 1.2vw; 
+    font-size: 0.8vw; 
     font-style: normal; 
     font-weight: 600;
 }
@@ -289,6 +296,183 @@ td {
 
     display: block;
 
-    color: white;
     margin-bottom: 4.0vh;
+}
+
+.search_box {
+
+    border-radius: 2.0vw;
+    border: 0.2vw solid #ff8400;
+
+    height: 3.0vh;
+    width: 12.5vw;
+    
+    text-align: center;
+    font-size: 0.9vw;
+    font-style: normal; 
+    font-weight: 600;
+}
+
+.search_button {
+
+    font-size: 0.7vw;
+    font-family: 'Poppins', sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    border-radius: 0.5vw;
+    border: 0.2vw solid var(--Color---3, #ff8400);
+    -webkit-text-fill-color: #ff8400;
+    text-decoration: none;
+    background-color: transparent;
+
+    padding-top: 0.6vh;
+    padding-bottom: 0.8vh;
+    padding-left: 1.25vw;
+    padding-right: 1.25vw;
+
+    cursor: pointer;
+
+}
+
+.hd5 {
+
+    display: block;
+    font-size: 1.6vh;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    text-decoration: none;
+    color: White;
+    transition: all 0.5s ease-in-out;
+    line-height: 140%;
+    margin-top: 1.8vh;
+    margin-right: 3.0vw;
+    text-align: end;
+ 
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    top: 30%;
+    left: 40%;
+
+    width: 15.0vw;
+    overflow: auto;
+    border-radius: 2.0vh;
+
+    background: rgba( 255, 255, 255, 0.25 );
+    box-shadow: 0 0.8vh 3.2vh 0 rgba( 31, 38, 135, 0.37 );
+    backdrop-filter: blur( 0.4vh );
+    -webkit-backdrop-filter: blur( 0.4vh );
+    border-radius: 2.0vh;
+    transition: all 0.5s ease-in-out;
+}
+
+.ci-edit {
+
+
+    font-size: 1.4vh;
+    font-family: 'Poppins', sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    border-radius: 1.0vh;
+    border: 0.3vh solid var(--Color---3, #ff8400);
+    -webkit-text-fill-color: #ff8400;
+    background-color: white;
+    text-decoration: none;
+
+    padding-top: 0.3vh;
+    padding-bottom: 0.4vh;
+    padding-left: 1.5vh;
+    padding-right: 1.5vh;
+
+}
+
+.ci-edit:hover {
+
+    -webkit-text-fill-color: #0156FF;
+    border-color: #0156FF;
+    transition-duration: 0.2s;
+
+}
+
+.cd-text{
+
+    color: white;
+    font-family: Poppins; 
+    font-size: 0.8vw; 
+    font-style: normal; 
+    font-weight: 400; 
+    text-decoration: none;
+    transition: all 0.5s ease-in-out;
+
+}
+
+.cd-pass {
+
+    display: block;
+    font-size: 1.8vh;
+    -webkit-text-fill-color: #000;
+    -webkit-text-stroke-color: #000;
+    border-color: #000;
+    border-radius: 0.8vh;
+    border: 0.2vh solid grey;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+
+}
+
+.modal-header {
+    color: white; 
+    font-family: Poppins; 
+    font-size: 1.0vw; 
+    font-style: normal; 
+    font-weight: 600; 
+    text-decoration: none;
+    transition: all 0.5s ease-in-out;
+    padding: 0.5vh;
+}
+
+.modal-divider {
+
+    width: 100%;
+    height: 0.4vh;
+    background-color: #ff8400;
+}
+
+.modal-body {
+
+    text-align: center;
+}
+
+.modal-content {
+    box-shadow: 0 0.4vh 0.8vh 0 rgba(0,0,0,0.2),0 0.6vh 2.0vh 0 rgba(0,0,0,0.19);
+}
+
+.modal-submit {
+
+    font-size: 1.4vh;
+    font-family: 'Poppins', sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    border-radius: 5vh;
+    border: 0.4vh solid var(--Color---3, #ff8400);
+    -webkit-text-fill-color: #ff8400;
+    background-color: white;
+    text-decoration: none;
+
+    padding-top: 0.8vh;
+    padding-bottom: 0.8vh;
+    padding-left: 2.5vh;
+    padding-right: 2.5vh;
+}
+
+.modal-submit:hover {
+
+    -webkit-text-fill-color: white;
+    background-color: #ff8400;
+    transition-duration: 0.4s;
+
 }

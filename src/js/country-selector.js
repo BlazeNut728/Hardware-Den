@@ -1,4 +1,3 @@
-// user country code for selected option
 var user_country_code = "IN";
 
 (() => {
@@ -14,7 +13,6 @@ var user_country_code = "IN";
         option += '<option value="">Select Country</option>';
 
         for(let country_code in country_array){
-            // set selected option user country
             let selected = (country_code == user_country_code) ? ' selected' : '';
             option += '<option value="'+country_code+'"'+selected+'>'+country_array[country_code]+'</option>';
         }
@@ -23,10 +21,8 @@ var user_country_code = "IN";
 
     const createStatesNamesDropdown = () => {
         let selected_country_code = id_country_option.value;
-        // get state names
         let state_names = states_array[selected_country_code];
 
-        // if invalid country code
         if(!state_names){
             id_state_option.innerHTML = '<option>Select State</option>';
             return;
@@ -41,7 +37,6 @@ var user_country_code = "IN";
         id_state_option.innerHTML = option;
     };
 
-    // country select change event
     id_country_option.addEventListener('change', createStatesNamesDropdown);
 
     createCountryNamesDropdown();
