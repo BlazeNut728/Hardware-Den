@@ -15,13 +15,13 @@
             <a class="logo"><b>Hardware Den</b></a>
         </div>
 
-        <img class = "nav-slash" src = "https://cdn.discordapp.com/attachments/1196163965110202440/1225357791045095424/Backslash-Symbol-Transparent.png?ex=6620d65f&is=660e615f&hm=c97040de4c10f0badb1169a67733270d5938e21daf7855b449731d9c24ce1588&"></img>
+        <img class = "nav-slash" src = "https://cdn.discordapp.com/attachments/1196163965110202440/1224785446211420191/Backslash-Symbol-Transparent.png?ex=6627fbd5&is=661586d5&hm=b6489cf9fd3249637e9411c42ebb1d03ac11a973b6e8ca088625f783c0db49f4&"></img>
 
         <div class = "menu-container">
         
-            <a class="df" href="#DB" <?php $href="#DB" ?>>Dashboard</a>
-            <a class="df" href="#UM" <?php $href="#UM" ?>>User Management</a>
-            <a class="df" href="#CL" <?php $href="#CL" ?>>Catalogue</a>
+            <a class="df" href="admin_dashboard.php" <?php $href="#DB" ?>>Dashboard</a>
+            <a class="df" href="admin_user.php" <?php $href="#UM" ?>>User Management</a>
+            <a class="df" href="admin_catalogue.php" <?php $href="#CL" ?>>Catalogue</a>
             <a class="df" href="#ND" <?php $href="#ND" ?>>Newsletter</a>
             <a class="df" href="#PS" <?php $href="#PS" ?>>Customer Queries</a>
             <a class="df" href="#PCP" <?php $href="#PCP" ?>>Stock Management</a>
