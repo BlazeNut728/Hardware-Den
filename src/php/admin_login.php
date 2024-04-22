@@ -11,11 +11,11 @@
 <body>
 
     <div class="bg"> 
-        <img src="https://cdn.discordapp.com/attachments/1196163965110202440/1196167412979093544/1080.png?ex=6612edb6&is=660078b6&hm=6e7d6ec6f630cff09c55daa5ef8a2d9be09bd4b1906851e3dcf99d1668b95b18&" class="bgimg" alt="Vector">
+        <img src="https://media.discordapp.net/attachments/1196163965110202440/1196167412979093544/1080.png?ex=6637d7b6&is=662562b6&hm=5f404e616f9a8c292ecfdcb3060721cbd2839385bfc6c8ae59f303f8f4e4d8ea&=&format=webp&quality=lossless&width=1246&height=701" class="bgimg" alt="Vector">
     </div>
 
     <div class = form>
-        <img src="https://cdn.discordapp.com/attachments/1196163965110202440/1196183586852851722/Group-removebg-preview.png?ex=6612fcc7&is=660087c7&hm=d08150e3042dfa40a3dae66c1c407589884085d6a449accc082acffc40fa163e&" class="basket" alt="Basket">
+        <img src="https://cdn.discordapp.com/attachments/1196163965110202440/1196168757622616074/Group.png?ex=6637d8f7&is=662563f7&hm=c8372570e70845fae4661555252ad9e1052ab98b929d4f58bce0024bde0bd89d&" class="basket" alt="Basket">
         
         <form form action="admin_login.php" method="POST">
             <div class = Rectangle1>
