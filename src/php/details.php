@@ -107,7 +107,17 @@
         <?php
         if($id >= 1 && $id <= 999999)
         {
-            echo '<a class="detail-title">' . $row["release_year"] . ' ' . $row["manufacturer"] . ' ' . $row["model_name"] . '</a> <input type="submit" value="Add To Cart" class="item-submit">' . '<input class="wishlist-btn" type="checkbox" id="wishlist-btn" value="'. $item_id = $row["laptop_id"]. '" /> <br>';
+            echo '<a class="detail-title">' . $row["release_year"] . ' ' . $row["manufacturer"] . ' ' . $row["model_name"] . 
+            '<form action="cart.php" method="POST">'.
+            '<input type="hidden" name="product_id" value="'.$row["laptop_id"].'">'.
+            '<input type="hidden" name="product_name" value="'.$row["manufacturer"].' '.$row["model_name"].'">'.
+            '<input type="hidden" name="price" value="'.$row["price"].'">'.
+            '<input type="hidden" name="display_image" value="'.$row["display_image"].'">'.
+            '<input type="hidden" name="quantity" value="1">'.
+            '<input type="hidden" name="desc" value="'.$row["cpu_brand"].' '.$row["cpu_series"].' '.$row["cpu_name"]. '<br>'. $row["gpu_brand"].' '.$row["gpu_series"].'<br>'. $row["ram_size"].' GB | '.$row["ram_speed"].' MHz<br>'.'">'.
+            '<input type="submit" name="add_to_cart" value="Add To Cart" class="item-submit">'.
+            '</form>'. 
+            '<input class="wishlist-btn" type="checkbox" id="wishlist-btn" value="'. $item_id = $row["laptop_id"]. '" /> <br>';
             echo '<div class="divider"></div><br>';
             echo '<a class="detail-price">₹ ' . $row["price"] . '</a><br><br>';
             echo '<a class="detail-spec-heading">Specifications:</a>';
@@ -145,7 +155,16 @@
 
         else if($id >= 1000000 && $id <= 1999999)
         {
-            echo '<a class="detail-title">' . $row["manufacturer"] . ' ' . $row["model_name"] . '</a> <input type="submit" value="Add To Cart" class="item-submit"> <br>';
+            echo '<a class="detail-title">' . $row["manufacturer"] . ' ' . $row["model_name"] . 
+            '<form action="cart.php" method="POST">'.
+            '<input type="hidden" name="product_id" value="'.$row["pc_id"].'">'.
+            '<input type="hidden" name="product_name" value="'.$row["manufacturer"].' '.$row["model_name"].'">'.
+            '<input type="hidden" name="price" value="'.$row["price"].'">'.
+            '<input type="hidden" name="display_image" value="'.$row["images"].'">'.
+            '<input type="hidden" name="quantity" value="1">'.
+            '<input type="hidden" name="desc" value="'.$row["cpu_brand"].' '.$row["cpu_series"].' '.$row["cpu_name"]. '<br>'. $row["gpu_brand"].' '.$row["gpu_series"].'<br>'. $row["ram_size"].' GB | '.$row["ram_speed"].' MHz<br>'.'">'.
+            '<input type="submit" name="add_to_cart" value="Add To Cart" class="item-submit">'.
+            '</form>'. '<br>';
             echo '<div class="divider"></div><br>';
             echo '<a class="detail-price">₹ ' . $row["price"] . '</a><br><br>';
             echo '<a class="detail-spec-heading">Specifications:</a>';
@@ -181,7 +200,15 @@
 
         else if($id >= 2000000 && $id <= 2999999)
         {
-            echo '<a class="detail-title">' . $row["manufacturer"] . ' ' . $row["model_name"] . '</a> <input type="submit" value="Add To Cart" class="item-submit"> <br>';
+            echo '<a class="detail-title">' . $row["manufacturer"] . ' ' . $row["model_name"] . 
+            '<form action="cart.php" method="POST">'.
+            '<input type="hidden" name="product_id" value="'.$row["network_card_id"].'">'.
+            '<input type="hidden" name="product_name" value="'.$row["manufacturer"].' '.$row["model_name"].'">'.
+            '<input type="hidden" name="price" value="'.$row["price"].'">'.
+            '<input type="hidden" name="display_image" value="'.$row["display_image"].'">'.
+            '<input type="hidden" name="quantity" value="1">'.
+            '<input type="submit" name="add_to_cart" value="Add To Cart" class="item-submit">'.
+            '</form>'. '<br>';
             echo '<div class="divider"></div><br>';
             echo '<a class="detail-price">₹ ' . $row["price"] . '</a><br><br>';
             echo '<a class="detail-spec-heading">Specifications:</a>';

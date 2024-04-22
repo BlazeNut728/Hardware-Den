@@ -214,6 +214,8 @@ body {
     padding-bottom: 0.8vh;
     padding-left: 2.5vh;
     padding-right: 2.5vh;
+    
+    cursor: pointer;
 }
 
 .cart-item-remove:hover {
@@ -289,4 +291,37 @@ body {
     background-color: #000;
     width: 92%;
     height: 0.3vh;
+}
+
+.cart-order {
+
+    position: absolute;
+
+    font-size: 2.4vh;
+    font-family: 'Poppins', sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    border-radius: 5vh;
+    border: 0.4vh solid var(--Color---3, #ff8400);
+    -webkit-text-fill-color: #ff8400;
+    text-decoration: none;
+    background-color: white;
+
+    margin-left: 13.25vw;
+    margin-top: 1.0vh;
+
+    padding-top: 0.8vh;
+    padding-bottom: 0.8vh;
+    padding-left: 2.5vh;
+    padding-right: 2.5vh;
+
+    cursor: pointer;
+}
+
+.cart-order:hover {
+
+    -webkit-text-fill-color: green;
+    border-color: green;
+    transition-duration: 0.2s;
+
 }

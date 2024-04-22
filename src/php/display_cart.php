@@ -84,9 +84,14 @@
 
             $totals = calculateTotalWithGST($_SESSION['cart']);
 
-            echo '<br><br><div class="divider"></div><br>'. 
+            echo '<br><br><div class="divider"></div><br>';
+
+            echo '<form action="order_placed.php" method="POST">
+            <input type="hidden" name="totalWithGST" value="'. $totals['totalWithGST'].'">
+            <button type="submit" class="cart-order">Place Order</button>
+            </form>';
             
-            '<div class="cart-total">' .
+            echo '<div class="cart-total">' .
 
             '<a class = "total-title">Original: </a>' .
             '<a class = "total-amount total-amount3"> ₹' . number_format($totals['total'], 2) . '</a><br><br>' .
@@ -100,6 +105,7 @@
             '<a class = "total-amount2"> ₹' . number_format($totals['totalWithGST'], 2) . '</a><br>' .
 
             '</div>';
+
         }
 
         ?>
