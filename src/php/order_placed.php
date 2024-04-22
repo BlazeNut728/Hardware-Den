@@ -21,6 +21,8 @@
 
 
     <?php
+
+        error_reporting(0);
         session_start();
         include("data_conn.php");
 
@@ -69,6 +71,7 @@
     ?>
 
     <?php
+    error_reporting(0);
     include("data_conn.php");
 
     if (isset($_POST['totalWithGST'])) {
