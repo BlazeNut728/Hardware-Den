@@ -1,5 +1,13 @@
 {
     "require": {
-        "stripe/stripe-php": "*"
-    }
+        "stripe/stripe-php": "*",
+        "tecnickcom/tc-lib-pdf": "*"
+    },
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "git@github.com:tecnickcom/tc-lib-pdf.git"
+        }
+    ]
 }
+
