@@ -66,67 +66,70 @@
                 }
             } 
         } else {
-            echo "<p>Error: Transaction Failed.</p>";
+            header("display_cart.php");
         }
     ?>
 
     <?php
-    error_reporting(0);
-    include("data_conn.php");
+        error_reporting(0);
+        include("data_conn.php");
 
-    if (isset($_POST['totalWithGST'])) {
-        $totalWithGST = $_POST['totalWithGST'];
-        
-        if(empty($_SESSION['cart'])) {
-            header('Location: cart.php');
-        } else {
-           
-            $order_id = uniqid('order_');
-
-            if(isset($_COOKIE['user'])) {
-
-                $sql = "SELECT * FROM `login_credential` where user = '$cookie_user'";
-                $r1 = mysqli_query($conn, $sql);
-                $row = mysqli_fetch_array($r1, MYSQLI_ASSOC);
-
-                $customer_id = $row['id'];
+        if (isset($_POST['totalWithGST'])) {
+            $totalWithGST = $_POST['totalWithGST'];
+            
+            if(empty($_SESSION['cart'])) {
+                header('Location: cart.php');
             } else {
+            
+                $order_id = uniqid('order_');
+
+                if(isset($_COOKIE['user'])) {
+
+                    // Fetch customer ID using cookie_user
+                    $cookie_user = $_COOKIE['user'];
+                    $sql = "SELECT * FROM `login_credential` where user = '$cookie_user'";
+                    $r1 = mysqli_query($conn, $sql);
+                    $row = mysqli_fetch_array($r1, MYSQLI_ASSOC);
+
+                    $customer_id = $row['id'];
+                } else {
+                    
+                    echo "Customer ID not found";
+                    exit;
+                }
+
                 
-                echo "Customer ID not found";
-                exit;
-            }
+                $product_ids = [];
+                $quantities = [];
+                foreach($_SESSION['cart'] as $item) {
+                    $product_ids[] = $item['product_id'];
+                    $quantities[] = $item['quantity'];
+                }
+                $product_ids_json = json_encode($product_ids);
+                $quantities_json = json_encode($quantities);
 
-            
-            $product_ids = [];
-            $quantities = [];
-            foreach($_SESSION['cart'] as $item) {
-                $product_ids[] = $item['product_id'];
-                $quantities[] = $item['quantity'];
-            }
-            $product_ids_str = implode(',', $product_ids);
-            $quantities_str = implode(',', $quantities);
+                
+                $payment_id = uniqid('payment_');
 
-            
-            $payment_id = uniqid('payment_');
+                // Insert into order_log table
+                $sql = "INSERT INTO order_logs (order_id, customer_id, product_id, payment_id, amount, quantity) 
+                        VALUES ('$order_id', '$customer_id', '$product_ids_json', '$payment_id', '$totalWithGST', '$quantities_json')";
+                $result = mysqli_query($conn, $sql);
 
-            // Insert into order_log table
-            $sql = "INSERT INTO order_logs (order_id, customer_id, product_id, payment_id, amount, quantity) 
-                    VALUES ('$order_id', '$customer_id', '$product_ids_str', '$payment_id', '$totalWithGST', '$quantities_str')";
-            $result = mysqli_query($conn, $sql);
+                if($result) {
 
-            if($result) {
-
-                session_destroy();
-                echo ("Order has been Placed.");
-                exit;
-            } else {
-                echo "Error inserting into order_log table";
-            }
-        } 
-    } else {
-        echo "<p>Error: Transaction Failed.</p>";
-    }
+                    session_destroy();
+                    echo '<div style="font-family: Poppins; font-size: 2.0vW; font-style: normal; font-weight: 600; color:#ff8400; margin-left: 13.3vw;">Your Order has been Placed</div>' ;
+                    exit;
+                } else {
+                    echo "Error inserting into order_log table";
+                }
+            } 
+        } else {
+            echo '<div style="font-family: Poppins; font-size: 2.0vW; font-style: normal; font-weight: 600; color:#ff8400; margin-left: 13.3vw;">Add Some Items to the Cart first</div>';
+        }
     ?>
+
 
 
 </body>

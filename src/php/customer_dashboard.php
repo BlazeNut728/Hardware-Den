@@ -24,8 +24,6 @@
         $cookie_user = $_COOKIE["user"];
         $user_id = $_COOKIE['user_id'];
 
-        echo json_encode(array("user_id" => $user_id));
-
         $sql = "SELECT * FROM `login_credential` where user = '$cookie_user'";
         $r1 = mysqli_query($conn, $sql);
         $row = mysqli_fetch_array($r1, MYSQLI_ASSOC);

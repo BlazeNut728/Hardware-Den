@@ -31,7 +31,7 @@
             Shop management approach fosters a strong customer service focus in our staff. We prefer to cultivate long-term client relationships rather than achieve quick sales, demonstrated in the measure of our long-term success.
         </div>
 
-        <img class = "img1" src = "https://media.discordapp.net/attachments/1196163965110202440/1201101024828588154/image.png?ex=66126b7f&is=65fff67f&hm=9443e55ede8238c8b576d47b2bdb737c6c3fed4e27fb2de23ee304ad508fbb79&=&format=webp&quality=lossless&width=337&height=350">
+        <img class = "img1" src = "https://cdn.discordapp.com/attachments/1196163965110202440/1201101024828588154/image.png?ex=6627837f&is=662631ff&hm=ee255527ad5d139bce50e9735695c459a540d8e91892d9bd9cc5ef355d1ba893&">
     </div>
 
     <div class= "au2">
@@ -42,7 +42,7 @@
             Hardware-Den.com is a proudly Indian owned, Mumbai based supplier of I.T. goods and services, operating since 2024. Our client base encompasses individuals, small business, corporate and government organisations. We provide complete business IT solutions, centred on high quality hardware and exceptional customer service.
         </div>
 
-        <img class = "img2" src = "https://media.discordapp.net/attachments/1196163965110202440/1201104124339568680/image.png?ex=66126e62&is=65fff962&hm=f8b27199a593d6cac746a39365f569cbc667ec94fcec95a0903fea3e74bc8149&=&format=webp&quality=lossless&width=489&height=350">
+        <img class = "img2" src = "https://cdn.discordapp.com/attachments/1196163965110202440/1201104124339568680/image.png?ex=66278662&is=662634e2&hm=4a45e6c0ff022464bf4e2bc7af45282fbbebe69f34be7a8c70abf370c479092d&">
     </div>
 
     <div class= "au1">
@@ -55,7 +55,7 @@
         *Performance compared to i7-13700. Specs varies by model.
         </div>
 
-        <img class = "img1" src = "https://media.discordapp.net/attachments/1196163965110202440/1201107253374230548/image.png?ex=6612714c&is=65fffc4c&hm=0d3e9af23aea680138ad4f178c45c8fae1d3f40c4d6244d896761c9c5e5bc60b&=&format=webp&quality=lossless&width=287&height=350">
+        <img class = "img1" src = "https://cdn.discordapp.com/attachments/1196163965110202440/1201107253374230548/image.png?ex=6627894c&is=662637cc&hm=d5beadda4e46d48a5d3f3c8f26b0799fb3dbc97286af01c41599f1cd07725299&">
     </div>
 
     <div class= "au2">
@@ -66,7 +66,7 @@
             We guarantee the highest quality of the products we sell. Several decades of successful operation and millions of happy customers let us feel certain about that. Besides, all items we sell pass thorough quality control, so no characteristics mismatch can escape the eye of our professionals.
         </div>
 
-        <img class = "img2" src = "https://media.discordapp.net/attachments/1196163965110202440/1201109637542461470/image.png?ex=66127385&is=65fffe85&hm=8798cfa9a9e7cce8e6d50ba1261099927eef41af91abbdf91a22399c93ced48e&=&format=webp&quality=lossless&width=447&height=350">
+        <img class = "img2" src = "https://cdn.discordapp.com/attachments/1196163965110202440/1201109637542461470/image.png?ex=66278b85&is=66263a05&hm=d7ec22fa633d6675dc9470ccf361f6f1941ca3753b0128eb9b1dff840096091e&">
     </div>
 
     <div class= "au1">
@@ -77,11 +77,11 @@
             We deliver our goods all across India. No matter where you live, your order will be shipped in time and delivered right to your door or to any other location you have stated. The packages are handled with utmost care, so the ordered products will be handed to you safe and sound, just like you expect them to be.
         </div>
 
-        <img class = "img1" src = "https://media.discordapp.net/attachments/1196163965110202440/1201110117383421953/image.png?ex=661273f7&is=65fffef7&hm=2a785e3c42ec94e9c70250b783b887b147999a51bfe8a1cb4ede7b90cacee433&=&format=webp&quality=lossless&width=264&height=350">
+        <img class = "img1" src = "https://cdn.discordapp.com/attachments/1196163965110202440/1201110117383421953/image.png?ex=66278bf7&is=66263a77&hm=4e809b0ea54683ac47bcc97ee914e611333ddbb751ca74325fb430e4acc200df&">
     </div>
     <br><br>
     <div class= "review-box">
-    <img class = "img3" src = "https://media.discordapp.net/attachments/1196163965110202440/1201125633028264036/image.png?ex=6612826a&is=66000d6a&hm=a6a97e696cc4283917a8ad0829361fcc5945638e257dec9a9de77fc5bfa5eb7f&=&format=webp&quality=lossless">
+    <img class = "img3" src = "https://cdn.discordapp.com/attachments/1196163965110202440/1201125633028264036/image.png?ex=66279a6a&is=662648ea&hm=6386026d8e8461a94ba298ede96ee63617d0e03842e7a3017fa2c075cfe94f39&">
         <div class = "rb-comment">
             My first order arrived today in perfect condition.  From the time I sent a question about the item to making the purchase, to the shipping and now the delivery, your company, Tecs, has stayed in touch.  Such great service.  I look forward to shopping on your site in the future and would highly recommend it.
         </div>

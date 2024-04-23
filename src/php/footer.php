@@ -134,7 +134,7 @@
                 $email = $_POST['email'];
                 $sql = "INSERT INTO newsletter (nw_id, email, Status) VALUES (NULL, '$email', '1')";
                 if ($conn->query($sql) === TRUE) {
-                    echo "New record created successfully";
+                    header('Location: ' . $_SERVER['HTTP_REFERER']);
                   } else {
                     echo "Error: " . $sql . "<br>" . $conn->error;
                   }
